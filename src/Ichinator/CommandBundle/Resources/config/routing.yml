@@ -1,0 +1,3 @@
+ichinator_command_homepage:
+    path:     /command
+    defaults: { _controller: IchinatorCommandBundle:Default:index }
