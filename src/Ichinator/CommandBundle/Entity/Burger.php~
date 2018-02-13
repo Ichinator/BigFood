@@ -52,7 +52,7 @@ class Burger
     private $image;
 
     /**
-     * @Vich\UploadableField(mapping="burger_images", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="burgers_images", fileNameProperty="image")
      * @var File
      */
     private $imageFile;
@@ -171,5 +171,29 @@ class Burger
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Burger
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 }

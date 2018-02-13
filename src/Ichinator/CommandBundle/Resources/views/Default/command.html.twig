@@ -5,6 +5,9 @@
 {% block body %}
     {{ parent() }}
     <p>Page de commande</p>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}

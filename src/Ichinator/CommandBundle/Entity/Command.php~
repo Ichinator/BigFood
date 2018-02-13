@@ -1,0 +1,55 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: ichinator
+ * Date: 13/02/18
+ * Time: 15:02
+ */
+
+namespace Ichinator\CommandBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Command
+ * @ORM\Table(name="command")
+ * @ORM\Entity(repositoryClass="Ichinator\CommandBundle\Repository\CommandRepository")
+ */
+
+class Command
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column ( type="string", length=255, nullable=true)
+     */
+
+    private $burger;
+    /**
+     * @ORM\Column ( type="string", length=255, nullable=true)
+     */
+
+    private $plat;
+    /**
+     * @ORM\Column ( type="string", length=255, nullable= true)
+     */
+    
+    private $dessert;
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}
