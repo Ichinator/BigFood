@@ -11,7 +11,8 @@
                     <div class="card-body">
                         <h4 class="card-title">{{ burger.name }}</h4>
                         <p class="card-text">{{ burger.price }} €</p>
-                        <p class="card-text">{{ burger.description }} €</p>
+                        <img src="{{ vich_uploader_asset(burger, 'imageFile') }}" alt="{{ burger.image }}" />
+                        <p class="card-text">{{ burger.description }}</p>
                     </div>
                 </div>
         </div>

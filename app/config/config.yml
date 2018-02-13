@@ -7,9 +7,9 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
-    #app.path.burgers_images: /uploads/images/burgers
-    #app.path.plats_images: /uploads/images/plats
-    #app.path.desserts_images: /uploads/images/desserts
+    app.path.burgers_images: /uploads/images/burgers
+    app.path.plats_images: /uploads/images/plats
+    app.path.desserts_images: /uploads/images/desserts
 
 framework:
     #esi: ~
@@ -90,32 +90,50 @@ easy_admin:
                             label: 'Les burgers'
                             list:
                                 title: "Les burgers"
+                            form:
+                                            fields:
+                                                - { property: 'name', label: 'Nom du burger' }
+                                                - { property: 'price', label: 'Prix du burger' }
+                                                - { property: 'description', label: 'Description' }
+                                                - { property: 'imageFile', type: 'file' }
             Plat:
                             class: Ichinator\CommandBundle\Entity\Plat
                             label: 'Les plats'
                             list:
                                 title: "Les plats"
+                            form:
+                                                                        fields:
+                                                                            - { property: 'name', label: 'Nom du plat' }
+                                                                            - { property: 'price', label: 'Prix du plat' }
+                                                                            - { property: 'description', label: 'Description' }
+                                                                            - { property: 'imageFile', type: 'file' }
             Dessert:
                             class: Ichinator\CommandBundle\Entity\Dessert
                             label: 'Les desserts'
                             list:
                                 title: "Les desserts"
+                            form:
+                                                                        fields:
+                                                                            - { property: 'name', label: 'Nom du dessert' }
+                                                                            - { property: 'price', label: 'Prix du dessert' }
+                                                                            - { property: 'description', label: 'Description' }
+                                                                            - { property: 'imageFile', type: 'file' }
     site_name: 'Big Food'
 
 # app/config/config.yml
-#vich_uploader:
-    #db_driver: orm # or mongodb or propel or phpcr
-    #mappings:
-                #burgers_images:
-                #    uri_prefix:         '%app.path.burgers_images%'
-                #    upload_destination: '%kernel.root_dir%/../web/uploads/images/burgers'
-                #    namer: vich_uploader.namer_uniqid
-                #plats_images:
-                #    uri_prefix:         '%app.path.plats_images%'
-                #    upload_destination: '%kernel.root_dir%/../web/uploads/images/plats'
-                #    namer: vich_uploader.namer_uniqid
-                #desserts_images:
-                #    uri_prefix:         '%app.path.desserts_images%'
-                #    upload_destination: '%kernel.root_dir%/../web/uploads/images/desserts'
-                #    namer: vich_uploader.namer_uniqid
+vich_uploader:
+    db_driver: orm # or mongodb or propel or phpcr
+    mappings:
+                burgers_images:
+                    uri_prefix:         '%app.path.burgers_images%'
+                    upload_destination: '%kernel.root_dir%/../web/uploads/images/burgers'
+                    namer: vich_uploader.namer_uniqid
+                plats_images:
+                    uri_prefix:         '%app.path.plats_images%'
+                    upload_destination: '%kernel.root_dir%/../web/uploads/images/plats'
+                    namer: vich_uploader.namer_uniqid
+                desserts_images:
+                    uri_prefix:         '%app.path.desserts_images%'
+                    upload_destination: '%kernel.root_dir%/../web/uploads/images/desserts'
+                    namer: vich_uploader.namer_uniqid
 
