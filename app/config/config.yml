@@ -7,6 +7,9 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    #app.path.burgers_images: /uploads/images/burgers
+    #app.path.plats_images: /uploads/images/plats
+    #app.path.desserts_images: /uploads/images/desserts
 
 framework:
     #esi: ~
@@ -98,4 +101,21 @@ easy_admin:
                             list:
                                 title: "Les desserts"
     site_name: 'Big Food'
+
+# app/config/config.yml
+#vich_uploader:
+    #db_driver: orm # or mongodb or propel or phpcr
+    #mappings:
+                #burgers_images:
+                #    uri_prefix:         '%app.path.burgers_images%'
+                #    upload_destination: '%kernel.root_dir%/../web/uploads/images/burgers'
+                #    namer: vich_uploader.namer_uniqid
+                #plats_images:
+                #    uri_prefix:         '%app.path.plats_images%'
+                #    upload_destination: '%kernel.root_dir%/../web/uploads/images/plats'
+                #    namer: vich_uploader.namer_uniqid
+                #desserts_images:
+                #    uri_prefix:         '%app.path.desserts_images%'
+                #    upload_destination: '%kernel.root_dir%/../web/uploads/images/desserts'
+                #    namer: vich_uploader.namer_uniqid
 

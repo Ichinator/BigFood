@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+{% block body %}
+    {{ parent() }}
+    <p>Page des desserts</p>
+    {% for dessert in dessert %}
+        <div class="col-sm-4">
+            <div class="card" style="width:400px">
+                <div class="card-body">
+                    <h4 class="card-title">{{ dessert.name }}</h4>
+                    <p class="card-text">{{ dessert.price }} €</p>
+                    <p class="card-text">{{ dessert.description }} €</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

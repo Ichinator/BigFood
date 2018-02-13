@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+{% block body %}
+    {{ parent() }}
+    <p>Page des plats</p>
+    {% for plat in plat %}
+        <div class="col-sm-4">
+            <div class="card" style="width:400px">
+                <div class="card-body">
+                    <h4 class="card-title">{{ plat.name }}</h4>
+                    <p class="card-text">{{ plat.price }} €</p>
+                    <p class="card-text">{{ plat.description }} €</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

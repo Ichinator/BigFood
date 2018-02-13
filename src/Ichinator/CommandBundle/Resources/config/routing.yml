@@ -1,3 +1,15 @@
 ichinator_command_homepage:
     path:     /command
     defaults: { _controller: IchinatorCommandBundle:Default:index }
+
+ichinator_burger:
+    path:     /burger
+    defaults: { _controller: IchinatorCommandBundle:Food:burger }
+
+ichinator_plat:
+    path:     /plat
+    defaults: { _controller: IchinatorCommandBundle:Food:plat }
+
+ichinator_dessert:
+    path:     /dessert
+    defaults: { _controller: IchinatorCommandBundle:Food:dessert }
