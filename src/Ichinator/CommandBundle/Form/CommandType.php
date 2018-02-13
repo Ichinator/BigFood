@@ -26,16 +26,20 @@ class CommandType extends AbstractType
             ->add('burger', EntityType::class, array(
                 'class' => Burger::class,
                 'choice_label' => 'name',
+                'required' => false,
+                'placeholder' => '',
             ))
             ->add('plat', EntityType::class, array(
                 'class' => Plat::class,
                 'choice_label' => 'name',
+                'required' => false,
+                'placeholder' => '',
             ))
             ->add('dessert', EntityType::class, array(
                 'class' => Dessert::class,
                 'choice_label' => 'name',
-                /*'placeholder' => 'Choisissez un plat',
-                'required' => false,*/
+                'required' => false,
+                'placeholder' => '',
             ))
             ->add('submit', SubmitType::class)
         ;
