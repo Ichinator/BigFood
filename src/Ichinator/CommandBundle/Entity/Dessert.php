@@ -198,4 +198,9 @@ class Dessert
     {
         return $this->updatedAt;
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 }

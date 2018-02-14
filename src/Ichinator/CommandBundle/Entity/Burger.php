@@ -196,4 +196,9 @@ class Burger
     {
         return $this->updatedAt;
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 }

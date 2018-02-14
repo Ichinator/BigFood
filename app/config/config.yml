@@ -118,6 +118,16 @@ easy_admin:
                                                                             - { property: 'price', label: 'Prix du dessert' }
                                                                             - { property: 'description', label: 'Description' }
                                                                             - { property: 'imageFile', type: 'file' }
+            Command:
+                            class: Ichinator\CommandBundle\Entity\Command
+                            label: 'Les commandes'
+                            list:
+                                title: "Les commandes ( null si champ vide )"
+                            form:
+                                                                        fields:
+                                                                            - { property: 'burger', label: 'Burger de la commande' }
+                                                                            - { property: 'plat', label: 'Plat de la commande' }
+                                                                            - { property: 'dessert', label: 'Dessert de la commande' }
     site_name: 'Big Food'
 
 # app/config/config.yml
