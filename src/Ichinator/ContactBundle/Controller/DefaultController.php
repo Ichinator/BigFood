@@ -32,6 +32,15 @@ class DefaultController extends Controller
             $em->persist($contactMessage);
             $em->flush();
 
+            $messageToUser = \Swift_Message::newInstance()
+
+                ->setSubject("BigFood a reçu votre message")
+                ->setFrom('lazonegeek1@gmail.com')
+                ->setTo($mailAdress)
+                ->setBody($this->renderView('default/messageToUser.html.twig',array('message' => $message, 'name' => $name)),'text/html');
+            $this->get('mailer')->send($messageToUser);
+
+
             $this->addFlash('success', 'Votre message a bien été enregistré, nous vous contacterons bientôt !');
             return $this->redirectToRoute('homepage');
         }

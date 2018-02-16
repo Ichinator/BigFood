@@ -31,14 +31,14 @@ class contactMessage
     /**
      * @var string
      *
-     * @ORM\Column(name="mailAdress", type="string", length=255, unique=true)
+     * @ORM\Column(name="mailAdress", type="string", length=255)
      */
     private $mailAdress;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="telephoneNumber", type="integer", nullable=true, unique=true)
+     * @ORM\Column(name="telephoneNumber", type="integer", nullable=true)
      */
     private $telephoneNumber;
 

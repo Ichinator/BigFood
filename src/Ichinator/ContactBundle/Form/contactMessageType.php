@@ -19,7 +19,7 @@ class contactMessageType extends AbstractType
     {
         $builder->add('name', textType::class, array('label' => 'Votre nom ou pseudo', 'trim' => 'true'))
             ->add('mailAdress', textType::class, array('label' => 'Votre adresse mail', 'trim' => 'true'))
-            ->add('telephoneNumber', integerType::class, array('label' => 'Votre numéro de téléphone', 'required' => 'false'))
+            ->add('telephoneNumber', integerType::class, array('label' => 'Votre numéro de téléphone', 'required' => false))
             ->add('message', textAreaType::class, array('label'  => 'Votre Message'))
             ->add('submit', SubmitType::class, array('label' => 'Envoyer'));
     }/**

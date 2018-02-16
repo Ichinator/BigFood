@@ -132,6 +132,17 @@ easy_admin:
                                                                             - { property: 'plat', label: 'Plat de la commande' }
                                                                             - { property: 'dessert', label: 'Dessert de la commande' }
                                                                             - { property: 'date', label: 'Date prévue' }
+            contactMessage:
+                            class: Ichinator\ContactBundle\Entity\contactMessage
+                            label: 'Messages reçus'
+                            list:
+                                title: "Les messages reçus"
+                            form:
+                                                                        fields:
+                                                                            - { property: 'name', label: 'Noms' }
+                                                                            - { property: 'mailAdress', label: 'Adresses mails' }
+                                                                            - { property: 'telephoneNumber', label: 'Numéros de téléphone' }
+                                                                            - { property: 'message', type: 'text', label: 'Messages' }
     site_name: 'Big Food'
 
 # app/config/config.yml
