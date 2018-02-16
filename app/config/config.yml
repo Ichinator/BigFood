@@ -105,45 +105,50 @@ easy_admin:
                             list:
                                 title: "Les plats"
                             form:
-                                                                        fields:
-                                                                            - { property: 'name', label: 'Nom du plat' }
-                                                                            - { property: 'price', label: 'Prix du plat' }
-                                                                            - { property: 'description', label: 'Description' }
-                                                                            - { property: 'imageFile', type: 'file' }
+                                            fields:
+                                                - { property: 'name', label: 'Nom du plat' }
+                                                - { property: 'price', label: 'Prix du plat' }
+                                                - { property: 'description', label: 'Description' }
+                                                - { property: 'imageFile', type: 'file' }
             Dessert:
                             class: Ichinator\CommandBundle\Entity\Dessert
                             label: 'Les desserts'
                             list:
                                 title: "Les desserts"
                             form:
-                                                                        fields:
-                                                                            - { property: 'name', label: 'Nom du dessert' }
-                                                                            - { property: 'price', label: 'Prix du dessert' }
-                                                                            - { property: 'description', label: 'Description' }
-                                                                            - { property: 'imageFile', type: 'file' }
+                                            fields:
+                                                - { property: 'name', label: 'Nom du dessert' }
+                                                - { property: 'price', label: 'Prix du dessert' }
+                                                - { property: 'description', label: 'Description' }
+                                                - { property: 'imageFile', type: 'file' }
             Command:
                             class: Ichinator\CommandBundle\Entity\Command
                             label: 'Les commandes'
                             list:
                                 title: "Les commandes ( null si champ vide )"
                             form:
-                                                                        fields:
-                                                                            - { property: 'burger', label: 'Burger de la commande' }
-                                                                            - { property: 'plat', label: 'Plat de la commande' }
-                                                                            - { property: 'dessert', label: 'Dessert de la commande' }
-                                                                            - { property: 'date', label: 'Date prévue' }
+                                            fields:
+                                                - { property: 'burger', label: 'Burger de la commande' }
+                                                - { property: 'plat', label: 'Plat de la commande' }
+                                                - { property: 'dessert', label: 'Dessert de la commande' }
+                                                - { property: 'date', label: 'Date prévue' }
             contactMessage:
                             class: Ichinator\ContactBundle\Entity\contactMessage
                             label: 'Messages reçus'
                             list:
                                 title: "Les messages reçus"
                             form:
-                                                                        fields:
-                                                                            - { property: 'name', label: 'Noms' }
-                                                                            - { property: 'mailAdress', label: 'Adresses mails' }
-                                                                            - { property: 'telephoneNumber', label: 'Numéros de téléphone' }
-                                                                            - { property: 'message', type: 'text', label: 'Messages' }
+                                            fields:
+                                                - { property: 'name', label: 'Noms' }
+                                                - { property: 'mailAdress', label: 'Adresses mails' }
+                                                - { property: 'telephoneNumber', type: 'tel', label: 'Numéros de téléphone' }
+                                                - { property: 'message', type: 'text', label: 'Messages' }
     site_name: 'Big Food'
+    list:
+            actions:
+                - { name: 'show', icon: 'search', label: '', title: 'Chercher' }
+                - { name: 'edit', icon: 'pencil', label: '', title: 'Editer' }
+                - { name: 'delete', icon: 'remove', label: '', title: 'Supprimer' }
 
 # app/config/config.yml
 vich_uploader:
