@@ -7,6 +7,7 @@ use Ichinator\CommandBundle\Form\CommandType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+
 class DefaultController extends Controller
 {
     public function indexAction(Request $request)
@@ -18,6 +19,7 @@ class DefaultController extends Controller
             $burger = $form["burger"]->getData();
             $plat = $form["plat"]->getData();
             $dessert = $form["dessert"]->getData();
+            $date = $form["date"]->getData();
 
             $em = $this->getDoctrine()->getManager();
 
@@ -25,6 +27,7 @@ class DefaultController extends Controller
             $command->setBurger($burger);
             $command->setPlat($plat);
             $command->setDessert($dessert);
+            $command->setDate($date);
 
             $em->persist($command);
             $em->flush();

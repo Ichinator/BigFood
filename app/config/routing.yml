@@ -1,3 +1,7 @@
+ichinator_contact:
+    resource: "@IchinatorContactBundle/Resources/config/routing.yml"
+    prefix:   /
+
 ichinator_command:
     resource: "@IchinatorCommandBundle/Resources/config/routing.yml"
     prefix:   /

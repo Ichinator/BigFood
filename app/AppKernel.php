@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle(),
             new Ichinator\CommandBundle\IchinatorCommandBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
+            new Ichinator\ContactBundle\IchinatorContactBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

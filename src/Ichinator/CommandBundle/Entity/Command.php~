@@ -44,6 +44,11 @@ class Command
     private $dessert;
 
     /**
+     * @ORM\Column ( type="datetime" )
+     */
+    private $date;
+
+    /**
      * Get id
      *
      * @return integer
@@ -51,5 +56,101 @@ class Command
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set burger
+     *
+     * @param string $burger
+     *
+     * @return Command
+     */
+    public function setBurger($burger)
+    {
+        $this->burger = $burger;
+
+        return $this;
+    }
+
+    /**
+     * Get burger
+     *
+     * @return string
+     */
+    public function getBurger()
+    {
+        return $this->burger;
+    }
+
+    /**
+     * Set plat
+     *
+     * @param string $plat
+     *
+     * @return Command
+     */
+    public function setPlat($plat)
+    {
+        $this->plat = $plat;
+
+        return $this;
+    }
+
+    /**
+     * Get plat
+     *
+     * @return string
+     */
+    public function getPlat()
+    {
+        return $this->plat;
+    }
+
+    /**
+     * Set dessert
+     *
+     * @param string $dessert
+     *
+     * @return Command
+     */
+    public function setDessert($dessert)
+    {
+        $this->dessert = $dessert;
+
+        return $this;
+    }
+
+    /**
+     * Get dessert
+     *
+     * @return string
+     */
+    public function getDessert()
+    {
+        return $this->dessert;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Command
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
     }
 }

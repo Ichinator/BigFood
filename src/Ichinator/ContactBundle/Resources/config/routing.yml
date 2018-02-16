@@ -1,0 +1,3 @@
+ichinator_contact_homepage:
+    path:     /contact
+    defaults: { _controller: IchinatorContactBundle:Default:contact }

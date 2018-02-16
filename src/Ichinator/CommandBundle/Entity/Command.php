@@ -44,6 +44,11 @@ class Command
     private $dessert;
 
     /**
+     * @ORM\Column ( type="datetime" )
+     */
+    private $date;
+
+    /**
      * Get id
      *
      * @return integer
@@ -123,5 +128,29 @@ class Command
     public function getDessert()
     {
         return $this->dessert;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Command
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
     }
 }

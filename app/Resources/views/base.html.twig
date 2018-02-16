@@ -42,14 +42,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('fos_user_security_logout') }}">Se déconnecter</a>
                     </li>
+
                     {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('fos_user_registration_register') }}">S'inscrire</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('fos_user_security_login')}}">Se connecter</a>
-                    </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                Mon compte
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ path('fos_user_registration_register') }}">S'inscrire</a>
+                                <a class="dropdown-item" href="{{ path('fos_user_security_login') }}">Se connecter</a>
+                            </div>
+                        </li>
                     {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('ichinator_contact_homepage') }}">Nous contacter</a>
+                    </li>
                 </ul>
             </nav>
         {% endblock %}
