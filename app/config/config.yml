@@ -146,9 +146,10 @@ easy_admin:
     site_name: 'Big Food'
     list:
             actions:
-                - { name: 'show', icon: 'search', label: '', title: 'Chercher' }
+                - { name: 'show', icon: 'search', label: '', title: 'Voir les données' }
                 - { name: 'edit', icon: 'pencil', label: '', title: 'Editer' }
                 - { name: 'delete', icon: 'remove', label: '', title: 'Supprimer' }
+    
 
 # app/config/config.yml
 vich_uploader:
