@@ -141,8 +141,8 @@ easy_admin:
                                             fields:
                                                 - { property: 'name', label: 'Noms' }
                                                 - { property: 'mailAdress', label: 'Adresses mails' }
-                                                - { property: 'telephoneNumber', type: 'tel', label: 'Numéros de téléphone' }
-                                                - { property: 'message', type: 'text', label: 'Messages' }
+                                                - { property: 'telephoneNumber', label: 'Numéros de téléphone' }
+                                                - { property: 'message', type: 'textarea', label: 'Messages' }
     site_name: 'Big Food'
     list:
             actions:
