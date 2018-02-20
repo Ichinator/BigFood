@@ -127,6 +127,11 @@ Kontuaren balidazioazioarekin jarraitzeko - ireki ondoko orria: %confirmationUrl
 Adeitasunez,
 Taldea.
 ',
+    'resetting.check_email' => 'E-posta bat bidali da zure helbidera. Pasahitza berreskuratzeko estekan klik egin behar duzu bertan.
+Oharra: Behin %tokenLifetime% horduro bakarrik ezka dezakezu pasahitz berria.
+
+E-posta ez baduzu jasotzen, begira ezazu zure zabor-postan edo saiatu berriro.
+',
     'resetting.request.username' => 'Erabiltzaile izena',
     'resetting.request.submit' => 'Pasahitza berreskuratu',
     'resetting.reset.submit' => 'Pasahitza aldatu',

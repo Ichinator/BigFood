@@ -1,14 +1,11 @@
 {% extends "base.html.twig" %}
-{% block stylesheets %}
-    {{ parent() }}
-{% endblock %}
 {% block body %}
     {{ parent() }}
-    <p>Page de commande</p>
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {{ form_end(form) }}
-{% endblock %}
-{% block javascripts %}
-    {{ parent() }}
+    <div class="row">
+        <div class="col-sm-8">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
 {% endblock %}

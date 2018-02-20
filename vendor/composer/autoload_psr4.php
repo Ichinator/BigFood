@@ -33,6 +33,7 @@ return array(
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Psr\\Cache\\' => array($vendorDir . '/psr/cache/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
+    'KMS\\FroalaEditorBundle\\' => array($vendorDir . '/kms/froala-editor-bundle'),
     'JavierEguiluz\\Bundle\\EasyAdminBundle\\' => array($vendorDir . '/javiereguiluz/easyadmin-bundle/legacy'),
     'Incenteev\\ParameterHandler\\' => array($vendorDir . '/incenteev/composer-parameter-handler'),
     'Fig\\Link\\' => array($vendorDir . '/fig/link-util/src'),

@@ -7,8 +7,9 @@
             {{ message }}
         </div>
     {% endfor %}
+
+    {% for news in news %}
+        <p>{{ news.title }}</p>
+    {% endfor %}
 {% endblock %}
 
-{% block stylesheets %}
-{{ parent() }}
-{% endblock %}

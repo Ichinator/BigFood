@@ -128,6 +128,37 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        elseif (0 === strpos($pathinfo, '/admin')) {
+            // ichinator_news_homepage
+            if ('/admin/news' === $pathinfo) {
+                return array (  '_controller' => 'Ichinator\\NewsBundle\\Controller\\DefaultController::indexAction',  '_route' => 'ichinator_news_homepage',);
+            }
+
+            // easyadmin
+            if ('/admin' === $trimmedPathinfo) {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($rawPathinfo.'/', 'easyadmin');
+                }
+
+                return array (  '_controller' => 'EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AdminController::indexAction',  '_route' => 'easyadmin',);
+            }
+
+            // admin
+            if ('/admin' === $trimmedPathinfo) {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($rawPathinfo.'/', 'admin');
+                }
+
+                return array (  '_controller' => 'EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AdminController::indexAction',  '_route' => 'admin',);
+            }
+
+        }
+
+        // oneNewsRoute
+        if (0 === strpos($pathinfo, '/news') && preg_match('#^/news/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'oneNewsRoute')), array (  '_controller' => 'Ichinator\\NewsBundle\\Controller\\DefaultController::oneNewsAction',));
+        }
+
         // ichinator_contact_homepage
         if ('/contact' === $pathinfo) {
             return array (  '_controller' => 'Ichinator\\ContactBundle\\Controller\\DefaultController::contactAction',  '_route' => 'ichinator_contact_homepage',);
@@ -160,7 +191,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return $this->redirect($rawPathinfo.'/', 'fos_user_profile_show');
                 }
 
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::showAction',  '_route' => 'fos_user_profile_show',);
+                return array (  '_controller' => 'fos_user.profile.controller:showAction',  '_route' => 'fos_user_profile_show',);
             }
             not_fos_user_profile_show:
 
@@ -171,7 +202,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     goto not_fos_user_profile_edit;
                 }
 
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::editAction',  '_route' => 'fos_user_profile_edit',);
+                return array (  '_controller' => 'fos_user.profile.controller:editAction',  '_route' => 'fos_user_profile_edit',);
             }
             not_fos_user_profile_edit:
 
@@ -182,7 +213,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     goto not_fos_user_change_password;
                 }
 
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ChangePasswordController::changePasswordAction',  '_route' => 'fos_user_change_password',);
+                return array (  '_controller' => 'fos_user.change_password.controller:changePasswordAction',  '_route' => 'fos_user_change_password',);
             }
             not_fos_user_change_password:
 
@@ -210,7 +241,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     goto not_fos_user_security_login;
                 }
 
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'fos_user_security_login',);
+                return array (  '_controller' => 'fos_user.security.controller:loginAction',  '_route' => 'fos_user_security_login',);
             }
             not_fos_user_security_login:
 
@@ -221,7 +252,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     goto not_fos_user_security_check;
                 }
 
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::checkAction',  '_route' => 'fos_user_security_check',);
+                return array (  '_controller' => 'fos_user.security.controller:checkAction',  '_route' => 'fos_user_security_check',);
             }
             not_fos_user_security_check:
 
@@ -234,7 +265,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 goto not_fos_user_security_logout;
             }
 
-            return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::logoutAction',  '_route' => 'fos_user_security_logout',);
+            return array (  '_controller' => 'fos_user.security.controller:logoutAction',  '_route' => 'fos_user_security_logout',);
         }
         not_fos_user_security_logout:
 
@@ -250,7 +281,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return $this->redirect($rawPathinfo.'/', 'fos_user_registration_register');
                 }
 
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::registerAction',  '_route' => 'fos_user_registration_register',);
+                return array (  '_controller' => 'fos_user.registration.controller:registerAction',  '_route' => 'fos_user_registration_register',);
             }
             not_fos_user_registration_register:
 
@@ -261,7 +292,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     goto not_fos_user_registration_check_email;
                 }
 
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::checkEmailAction',  '_route' => 'fos_user_registration_check_email',);
+                return array (  '_controller' => 'fos_user.registration.controller:checkEmailAction',  '_route' => 'fos_user_registration_check_email',);
             }
             not_fos_user_registration_check_email:
 
@@ -273,7 +304,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                         goto not_fos_user_registration_confirm;
                     }
 
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_registration_confirm')), array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::confirmAction',));
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_registration_confirm')), array (  '_controller' => 'fos_user.registration.controller:confirmAction',));
                 }
                 not_fos_user_registration_confirm:
 
@@ -284,7 +315,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                         goto not_fos_user_registration_confirmed;
                     }
 
-                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::confirmedAction',  '_route' => 'fos_user_registration_confirmed',);
+                    return array (  '_controller' => 'fos_user.registration.controller:confirmedAction',  '_route' => 'fos_user_registration_confirmed',);
                 }
                 not_fos_user_registration_confirmed:
 
@@ -300,7 +331,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     goto not_fos_user_resetting_request;
                 }
 
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::requestAction',  '_route' => 'fos_user_resetting_request',);
+                return array (  '_controller' => 'fos_user.resetting.controller:requestAction',  '_route' => 'fos_user_resetting_request',);
             }
             not_fos_user_resetting_request:
 
@@ -311,7 +342,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     goto not_fos_user_resetting_reset;
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_resetting_reset')), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::resetAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_resetting_reset')), array (  '_controller' => 'fos_user.resetting.controller:resetAction',));
             }
             not_fos_user_resetting_reset:
 
@@ -322,7 +353,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     goto not_fos_user_resetting_send_email;
                 }
 
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::sendEmailAction',  '_route' => 'fos_user_resetting_send_email',);
+                return array (  '_controller' => 'fos_user.resetting.controller:sendEmailAction',  '_route' => 'fos_user_resetting_send_email',);
             }
             not_fos_user_resetting_send_email:
 
@@ -333,29 +364,39 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     goto not_fos_user_resetting_check_email;
                 }
 
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::checkEmailAction',  '_route' => 'fos_user_resetting_check_email',);
+                return array (  '_controller' => 'fos_user.resetting.controller:checkEmailAction',  '_route' => 'fos_user_resetting_check_email',);
             }
             not_fos_user_resetting_check_email:
 
         }
 
-        elseif (0 === strpos($pathinfo, '/admin')) {
-            // easyadmin
-            if ('/admin' === $trimmedPathinfo) {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($rawPathinfo.'/', 'easyadmin');
+        elseif (0 === strpos($pathinfo, '/froalaeditor')) {
+            if (0 === strpos($pathinfo, '/froalaeditor/upload_')) {
+                // kms_froala_editor_upload_image
+                if ('/froalaeditor/upload_image' === $pathinfo) {
+                    return array (  '_controller' => 'KMS\\FroalaEditorBundle\\Controller\\MediaController::uploadImageAction',  '_route' => 'kms_froala_editor_upload_image',);
                 }
 
-                return array (  '_controller' => 'EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AdminController::indexAction',  '_route' => 'easyadmin',);
+                // kms_froala_editor_upload_file
+                if ('/froalaeditor/upload_file' === $pathinfo) {
+                    return array (  '_controller' => 'KMS\\FroalaEditorBundle\\Controller\\MediaController::uploadFileAction',  '_route' => 'kms_froala_editor_upload_file',);
+                }
+
+                // kms_froala_editor_upload_video
+                if ('/froalaeditor/upload_video' === $pathinfo) {
+                    return array (  '_controller' => 'KMS\\FroalaEditorBundle\\Controller\\MediaController::uploadVideoAction',  '_route' => 'kms_froala_editor_upload_video',);
+                }
+
             }
 
-            // admin
-            if ('/admin' === $trimmedPathinfo) {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($rawPathinfo.'/', 'admin');
-                }
+            // kms_froala_editor_delete_image
+            if ('/froalaeditor/delete_image' === $pathinfo) {
+                return array (  '_controller' => 'KMS\\FroalaEditorBundle\\Controller\\MediaController::deleteImageAction',  '_route' => 'kms_froala_editor_delete_image',);
+            }
 
-                return array (  '_controller' => 'EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AdminController::indexAction',  '_route' => 'admin',);
+            // kms_froala_editor_load_images
+            if ('/froalaeditor/load_images' === $pathinfo) {
+                return array (  '_controller' => 'KMS\\FroalaEditorBundle\\Controller\\MediaController::loadImagesAction',  '_route' => 'kms_froala_editor_load_images',);
             }
 
         }

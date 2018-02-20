@@ -1,0 +1,9 @@
+ichinator_news_homepage:
+    path:     /admin/news
+    defaults: { _controller: IchinatorNewsBundle:Default:index }
+
+oneNewsRoute:
+    path:      /news/{id}
+    defaults:  { _controller: IchinatorNewsBundle:Default:oneNews }
+    requirements:
+        page: '\d+'

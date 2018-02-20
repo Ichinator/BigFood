@@ -1,23 +1,19 @@
 {% extends "base.html.twig" %}
-{% block stylesheets %}
-    {{ parent() }}
-{% endblock %}
 {% block body %}
     {{ parent() }}
-    <p>Page des desserts</p>
+    <div class="row">
     {% for dessert in dessert %}
-        <div class="col-sm-4">
+
             <div class="card" style="width:400px">
                 <div class="card-body">
                     <h4 class="card-title">{{ dessert.name }}</h4>
                     <p class="card-text">{{ dessert.price }} €</p>
                     <img src="{{ vich_uploader_asset(dessert, 'imageFile') }}" alt="{{ dessert.image }}" />
                     <p class="card-text">{{ dessert.description }} €</p>
+                    <a href="#" class="btn btn-primary">Another link</a>
                 </div>
             </div>
-        </div>
+
     {% endfor %}
-{% endblock %}
-{% block javascripts %}
-    {{ parent() }}
+    </div>
 {% endblock %}

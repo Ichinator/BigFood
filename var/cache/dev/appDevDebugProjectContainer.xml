@@ -22,6 +22,8 @@
       <parameter key="IchinatorCommandBundle">Ichinator\CommandBundle\IchinatorCommandBundle</parameter>
       <parameter key="VichUploaderBundle">Vich\UploaderBundle\VichUploaderBundle</parameter>
       <parameter key="IchinatorContactBundle">Ichinator\ContactBundle\IchinatorContactBundle</parameter>
+      <parameter key="IchinatorNewsBundle">Ichinator\NewsBundle\IchinatorNewsBundle</parameter>
+      <parameter key="KMSFroalaEditorBundle">KMS\FroalaEditorBundle\KMSFroalaEditorBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -94,6 +96,16 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">/home/ichinator/Bureau/MesProjetsGIT/BigFood/src/Ichinator/ContactBundle</parameter>
         <parameter key="namespace">Ichinator\ContactBundle</parameter>
+      </parameter>
+      <parameter key="IchinatorNewsBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/home/ichinator/Bureau/MesProjetsGIT/BigFood/src/Ichinator/NewsBundle</parameter>
+        <parameter key="namespace">Ichinator\NewsBundle</parameter>
+      </parameter>
+      <parameter key="KMSFroalaEditorBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/kms/froala-editor-bundle</parameter>
+        <parameter key="namespace">KMS\FroalaEditorBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -204,7 +216,9 @@
     <parameter key="security.authentication.hide_user_not_found">true</parameter>
     <parameter key="twig.exception_listener.controller">twig.controller.exception:showAction</parameter>
     <parameter key="twig.form.resources" type="collection">
+      <parameter>@KMSFroalaEditor/Form/froala_widget.html.twig</parameter>
       <parameter>form_div_layout.html.twig</parameter>
+      <parameter>bootstrap_3_horizontal_layout.html.twig</parameter>
     </parameter>
     <parameter key="monolog.use_microseconds">true</parameter>
     <parameter key="monolog.swift_mailer.handlers" type="collection"/>
@@ -687,6 +701,25 @@
       </parameter>
     </parameter>
     <parameter key="vich_uploader.file_injector.class">Vich\UploaderBundle\Injector\FileInjector</parameter>
+    <parameter key="kms_froala_editor.saveinterval">2500</parameter>
+    <parameter key="kms_froala_editor.fileuploadurl">kms_froala_editor_upload_file</parameter>
+    <parameter key="kms_froala_editor.imagemanagerdeleteurl">kms_froala_editor_delete_image</parameter>
+    <parameter key="kms_froala_editor.imagemanagerloadurl">kms_froala_editor_load_images</parameter>
+    <parameter key="kms_froala_editor.imageuploadurl">kms_froala_editor_upload_image</parameter>
+    <parameter key="kms_froala_editor.language">fr</parameter>
+    <parameter key="kms_froala_editor.saveparam">content</parameter>
+    <parameter key="kms_froala_editor.saveurl">ichinator_news_homepage</parameter>
+    <parameter key="kms_froala_editor.videouploadurl">kms_froala_editor_upload_video</parameter>
+    <parameter key="kms_froala_editor.includejs">true</parameter>
+    <parameter key="kms_froala_editor.includecss">true</parameter>
+    <parameter key="kms_froala_editor.includejquery">true</parameter>
+    <parameter key="kms_froala_editor.includefontawesome">true</parameter>
+    <parameter key="kms_froala_editor.includecodemirror">true</parameter>
+    <parameter key="kms_froala_editor.basepath">/bundles/kmsfroalaeditor/froala_editor_2.7.5</parameter>
+    <parameter key="kms_froala_editor.imageuploadfolder">/upload</parameter>
+    <parameter key="kms_froala_editor.fileuploadfolder">/upload</parameter>
+    <parameter key="kms_froala_editor.videouploadfolder">/upload</parameter>
+    <parameter key="kms_froala_editor.profiles" type="collection"/>
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
@@ -794,6 +827,12 @@
       <parameter key="console.command.doctrine_bundle_doctrinebundle_command_proxy_runsqldoctrinecommand">doctrine.query_sql_command</parameter>
       <parameter key="console.command.doctrine_bundle_doctrinebundle_command_proxy_updateschemadoctrinecommand">doctrine.schema_update_command</parameter>
       <parameter key="console.command.doctrine_bundle_doctrinebundle_command_proxy_validateschemacommand">doctrine.schema_validate_command</parameter>
+      <parameter key="console.command.fos_userbundle_command_activateusercommand">fos_user.command.activate_user</parameter>
+      <parameter key="console.command.fos_userbundle_command_changepasswordcommand">fos_user.command.change_password</parameter>
+      <parameter key="console.command.fos_userbundle_command_createusercommand">fos_user.command.create_user</parameter>
+      <parameter key="console.command.fos_userbundle_command_deactivateusercommand">fos_user.command.deactivate_user</parameter>
+      <parameter key="console.command.fos_userbundle_command_demoteusercommand">fos_user.command.demote_user</parameter>
+      <parameter key="console.command.fos_userbundle_command_promoteusercommand">fos_user.command.promote_user</parameter>
       <parameter key="console.command.sensiolabs_security_command_securitycheckercommand">sensio_distribution.security_checker.command</parameter>
       <parameter key="console.command.symfony_bundle_webserverbundle_command_serverruncommand">console.command.symfony_bundle_webserverbundle_command_serverruncommand</parameter>
       <parameter key="console.command.symfony_bundle_webserverbundle_command_serverstartcommand">console.command.symfony_bundle_webserverbundle_command_serverstartcommand</parameter>
@@ -969,7 +1008,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>uu5PyN8olONljXHi62DlLp</argument>
+      <argument>DlSCTq70zcK1r-dKLq-Kvb</argument>
       <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -979,7 +1018,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>uu5PyN8olONljXHi62DlLp</argument>
+      <argument>DlSCTq70zcK1r-dKLq-Kvb</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -1095,7 +1134,7 @@
       <argument type="service" id="form.resolved_type_factory"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id="service_locator.2aa3320f0c5da384d6fe392ec266c6e1"/>
+      <argument type="service" id="service_locator.dfd3c93110009ee3d712e57877f7a298"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.http_foundation"/>
@@ -1669,6 +1708,7 @@
             <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/javiereguiluz/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.fr.xlf</argument>
             <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/javiereguiluz/easyadmin-bundle/src/Resources/translations/messages.fr.xlf</argument>
             <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.fr.yml</argument>
+            <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/kms/froala-editor-bundle/Resources/translations/messages.fr.xlf</argument>
             <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/coresphere/console-bundle/Resources/translations/messages.fr.yml</argument>
           </argument>
           <argument key="hu" type="collection">
@@ -2515,6 +2555,14 @@
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service" id="debug.debug_handlers_listener"/>
+          <argument>configure</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
+      <call method="addListener">
+        <argument>console.command</argument>
         <argument type="collection">
           <argument type="service" id="debug.debug_handlers_listener"/>
           <argument>configure</argument>
@@ -3565,12 +3613,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>5a8be2203f2c84.72755497</argument>
+      <argument>5a8c2db7de2ce7.16331630</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>5a8be2203f2c84.72755497</argument>
+      <argument>5a8c2db7de2ce7.16331630</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -3628,10 +3676,11 @@
       <argument type="collection">
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
-        <argument key="exception_controller">twig.controller.exception:showAction</argument>
         <argument key="form_themes" type="collection">
           <argument>form_div_layout.html.twig</argument>
+          <argument>bootstrap_3_horizontal_layout.html.twig</argument>
         </argument>
+        <argument key="exception_controller">twig.controller.exception:showAction</argument>
         <argument key="autoescape">name</argument>
         <argument key="cache">/home/ichinator/Bureau/MesProjetsGIT/BigFood/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
@@ -3697,6 +3746,9 @@
       </call>
       <call method="addExtension">
         <argument type="service" id="vich_uploader.twig.extension.uploader"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="kms_froala_editor.froala_extension"/>
       </call>
       <call method="addExtension">
         <argument type="service" id="twig.extension.dump"/>
@@ -3795,6 +3847,14 @@
       <call method="addPath">
         <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/src/Ichinator/ContactBundle/Resources/views</argument>
         <argument>IchinatorContact</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/src/Ichinator/NewsBundle/Resources/views</argument>
+        <argument>IchinatorNews</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/kms/froala-editor-bundle/Resources/views</argument>
+        <argument>KMSFroalaEditor</argument>
       </call>
       <call method="addPath">
         <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
@@ -3907,7 +3967,9 @@
     </service>
     <service id="twig.form.engine" class="Symfony\Bridge\Twig\Form\TwigRendererEngine" public="false">
       <argument type="collection">
+        <argument>@KMSFroalaEditor/Form/froala_widget.html.twig</argument>
         <argument>form_div_layout.html.twig</argument>
+        <argument>bootstrap_3_horizontal_layout.html.twig</argument>
       </argument>
       <argument type="service" id="twig"/>
     </service>
@@ -3964,6 +4026,14 @@
       <call method="addPath">
         <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/src/Ichinator/ContactBundle/Resources/views</argument>
         <argument>IchinatorContact</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/src/Ichinator/NewsBundle/Resources/views</argument>
+        <argument>IchinatorNews</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/kms/froala-editor-bundle/Resources/views</argument>
+        <argument>KMSFroalaEditor</argument>
       </call>
       <call method="addPath">
         <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
@@ -4406,6 +4476,7 @@
           <argument key="AppBundle">AppBundle\Entity</argument>
           <argument key="IchinatorCommandBundle">Ichinator\CommandBundle\Entity</argument>
           <argument key="IchinatorContactBundle">Ichinator\ContactBundle\Entity</argument>
+          <argument key="IchinatorNewsBundle">Ichinator\NewsBundle\Entity</argument>
         </argument>
       </call>
       <call method="setMetadataCacheImpl">
@@ -4454,6 +4525,7 @@
         <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/src/AppBundle/Entity</argument>
         <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/src/Ichinator/CommandBundle/Entity</argument>
         <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/src/Ichinator/ContactBundle/Entity</argument>
+        <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/src/Ichinator/NewsBundle/Entity</argument>
       </argument>
     </service>
     <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
@@ -4468,6 +4540,10 @@
       <call method="addDriver">
         <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
         <argument>Ichinator\ContactBundle\Entity</argument>
+      </call>
+      <call method="addDriver">
+        <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
+        <argument>Ichinator\NewsBundle\Entity</argument>
       </call>
       <call method="addDriver">
         <argument type="service">
@@ -4622,6 +4698,9 @@
     <service id="fos_user.user_provider.username_email" class="FOS\UserBundle\Security\EmailUserProvider" public="false">
       <argument type="service" id="fos_user.user_manager.default"/>
     </service>
+    <service id="fos_user.security.controller" class="FOS\UserBundle\Controller\SecurityController">
+      <argument type="service" id="security.csrf.token_manager" on-invalid="null"/>
+    </service>
     <service id="fos_user.util.canonicalizer.default" class="FOS\UserBundle\Util\Canonicalizer" public="false"/>
     <service id="fos_user.util.user_manipulator" class="FOS\UserBundle\Util\UserManipulator">
       <argument type="service" id="fos_user.user_manager.default"/>
@@ -4637,6 +4716,7 @@
       <argument type="service" id="fos_user.util.canonicalizer.default"/>
     </service>
     <service id="fos_user.mailer.default" class="FOS\UserBundle\Mailer\Mailer" public="false">
+      <tag name="fos_user.requires_swift"/>
       <argument type="service" id="swiftmailer.mailer.default"/>
       <argument type="service" id="router.default"/>
       <argument type="service" id="templating.engine.twig"/>
@@ -4654,6 +4734,7 @@
       </argument>
     </service>
     <service id="fos_user.mailer.twig_swift" class="FOS\UserBundle\Mailer\TwigSwiftMailer" public="false">
+      <tag name="fos_user.requires_swift"/>
       <argument type="service" id="swiftmailer.mailer.default"/>
       <argument type="service" id="router.default"/>
       <argument type="service" id="twig"/>
@@ -4677,6 +4758,30 @@
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="fos_user.security.login_manager"/>
       <argument>main</argument>
+    </service>
+    <service id="fos_user.command.activate_user" class="FOS\UserBundle\Command\ActivateUserCommand">
+      <tag name="console.command" command="fos:user:activate"/>
+      <argument type="service" id="fos_user.util.user_manipulator"/>
+    </service>
+    <service id="fos_user.command.change_password" class="FOS\UserBundle\Command\ChangePasswordCommand">
+      <tag name="console.command" command="fos:user:change-password"/>
+      <argument type="service" id="fos_user.util.user_manipulator"/>
+    </service>
+    <service id="fos_user.command.create_user" class="FOS\UserBundle\Command\CreateUserCommand">
+      <tag name="console.command" command="fos:user:create"/>
+      <argument type="service" id="fos_user.util.user_manipulator"/>
+    </service>
+    <service id="fos_user.command.deactivate_user" class="FOS\UserBundle\Command\DeactivateUserCommand">
+      <tag name="console.command" command="fos:user:deactivate"/>
+      <argument type="service" id="fos_user.util.user_manipulator"/>
+    </service>
+    <service id="fos_user.command.demote_user" class="FOS\UserBundle\Command\DemoteUserCommand">
+      <tag name="console.command" command="fos:user:demote"/>
+      <argument type="service" id="fos_user.util.user_manipulator"/>
+    </service>
+    <service id="fos_user.command.promote_user" class="FOS\UserBundle\Command\PromoteUserCommand">
+      <tag name="console.command" command="fos:user:promote"/>
+      <argument type="service" id="fos_user.util.user_manipulator"/>
     </service>
     <service id="fos_user.listener.flash" class="FOS\UserBundle\EventListener\FlashListener">
       <tag name="kernel.event_subscriber"/>
@@ -4703,6 +4808,11 @@
       <tag name="form.type" alias="fos_user_profile"/>
       <argument>AppBundle\Entity\User</argument>
     </service>
+    <service id="fos_user.profile.controller" class="FOS\UserBundle\Controller\ProfileController">
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id="fos_user.profile.form.factory"/>
+      <argument type="service" id="fos_user.user_manager.default"/>
+    </service>
     <service id="fos_user.registration.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
       <argument type="service" id="form.factory"/>
       <argument>fos_user_registration_form</argument>
@@ -4715,6 +4825,12 @@
     <service id="fos_user.registration.form.type" class="FOS\UserBundle\Form\Type\RegistrationFormType">
       <tag name="form.type" alias="fos_user_registration"/>
       <argument>AppBundle\Entity\User</argument>
+    </service>
+    <service id="fos_user.registration.controller" class="FOS\UserBundle\Controller\RegistrationController">
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id="fos_user.registration.form.factory"/>
+      <argument type="service" id="fos_user.user_manager.default"/>
+      <argument type="service" id="security.token_storage"/>
     </service>
     <service id="fos_user.listener.email_confirmation" class="FOS\UserBundle\EventListener\EmailConfirmationListener">
       <tag name="kernel.event_subscriber"/>
@@ -4736,6 +4852,11 @@
       <tag name="form.type" alias="fos_user_change_password"/>
       <argument>AppBundle\Entity\User</argument>
     </service>
+    <service id="fos_user.change_password.controller" class="FOS\UserBundle\Controller\ChangePasswordController">
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id="fos_user.change_password.form.factory"/>
+      <argument type="service" id="fos_user.user_manager.default"/>
+    </service>
     <service id="fos_user.resetting.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
       <argument type="service" id="form.factory"/>
       <argument>fos_user_resetting_form</argument>
@@ -4753,6 +4874,14 @@
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="router.default"/>
       <argument>86400</argument>
+    </service>
+    <service id="fos_user.resetting.controller" class="FOS\UserBundle\Controller\ResettingController">
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id="fos_user.resetting.form.factory"/>
+      <argument type="service" id="fos_user.user_manager.default"/>
+      <argument type="service" id="fos_user.util.token_generator.default"/>
+      <argument type="service" id="fos_user.mailer.default"/>
+      <argument>7200</argument>
     </service>
     <service id="easyadmin.cache.manager" class="EasyCorp\Bundle\EasyAdminBundle\Cache\CacheManager">
       <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/var/cache/dev/easy_admin</argument>
@@ -5438,6 +5567,22 @@
       <argument type="service" id="vich_uploader.metadata_reader"/>
       <argument type="service" id="vich_uploader.upload_handler"/>
     </service>
+    <service id="kms_froala_editor.form.type" class="KMS\FroalaEditorBundle\Form\Type\FroalaEditorType">
+      <tag name="form.type" alias="froala"/>
+      <argument type="service" id="kernel"/>
+      <argument type="service" id="service_container"/>
+      <argument type="service" id="kms_froala_editor.option_manager"/>
+      <argument type="service" id="kms_froala_editor.plugin_provider"/>
+    </service>
+    <service id="kms_froala_editor.option_manager" class="KMS\FroalaEditorBundle\Service\OptionManager">
+      <argument type="service" id="router.default"/>
+    </service>
+    <service id="kms_froala_editor.plugin_provider" class="KMS\FroalaEditorBundle\Service\PluginProvider"/>
+    <service id="kms_froala_editor.media_manager" class="KMS\FroalaEditorBundle\Service\MediaManager"/>
+    <service id="kms_froala_editor.froala_extension" class="KMS\FroalaEditorBundle\Twig\FroalaExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="service_container"/>
+    </service>
     <service id="twig.extension.dump" class="Symfony\Bridge\Twig\Extension\DumpExtension" public="false">
       <tag name="twig.extension"/>
       <argument type="service" id="var_dumper.cloner"/>
@@ -5672,7 +5817,7 @@
         <argument key="translation.loader.yml" type="service" id="translation.loader.yml"/>
       </argument>
     </service>
-    <service id="service_locator.2aa3320f0c5da384d6fe392ec266c6e1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.dfd3c93110009ee3d712e57877f7a298" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="EasyCorp\Bundle\EasyAdminBundle\Form\Type\EasyAdminAutocompleteType" type="service" id="easyadmin.form.type.autocomplete"/>
@@ -5685,6 +5830,7 @@
         <argument key="FOS\UserBundle\Form\Type\RegistrationFormType" type="service" id="fos_user.registration.form.type"/>
         <argument key="FOS\UserBundle\Form\Type\ResettingFormType" type="service" id="fos_user.resetting.form.type"/>
         <argument key="FOS\UserBundle\Form\Type\UsernameFormType" type="service" id="fos_user.username_form_type"/>
+        <argument key="KMS\FroalaEditorBundle\Form\Type\FroalaEditorType" type="service" id="kms_froala_editor.form.type"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service" id="form.type.form"/>
@@ -5894,7 +6040,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>FOh9nYA+jr</argument>
       <argument>0</argument>
-      <argument>uu5PyN8olONljXHi62DlLp</argument>
+      <argument>DlSCTq70zcK1r-dKLq-Kvb</argument>
       <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -5902,7 +6048,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>HK5kVLuG4R</argument>
       <argument>0</argument>
-      <argument>uu5PyN8olONljXHi62DlLp</argument>
+      <argument>DlSCTq70zcK1r-dKLq-Kvb</argument>
       <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -5910,7 +6056,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>4qm58Y9Ern</argument>
       <argument>0</argument>
-      <argument>uu5PyN8olONljXHi62DlLp</argument>
+      <argument>DlSCTq70zcK1r-dKLq-Kvb</argument>
       <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -5918,7 +6064,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>6o6u32MTZb</argument>
       <argument>0</argument>
-      <argument>uu5PyN8olONljXHi62DlLp</argument>
+      <argument>DlSCTq70zcK1r-dKLq-Kvb</argument>
       <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -6017,12 +6163,17 @@
     <service id="doctrine.orm.default_entity_manager.event_manager" alias="doctrine.dbal.default_connection.event_manager" public="false"/>
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default" public="false"/>
     <service id="fos_user.doctrine_registry" alias="doctrine" public="false"/>
-    <service id="fos_user.mailer" alias="fos_user.mailer.default"/>
+    <service id="FOS\UserBundle\Security\LoginManagerInterface" alias="fos_user.security.login_manager" public="false"/>
+    <service id="FOS\UserBundle\Util\TokenGeneratorInterface" alias="fos_user.util.token_generator.default" public="false"/>
+    <service id="FOS\UserBundle\Util\PasswordUpdaterInterface" alias="fos_user.util.password_updater" public="false"/>
+    <service id="FOS\UserBundle\Util\CanonicalFieldsUpdater" alias="fos_user.util.canonical_fields_updater" public="false"/>
+    <service id="FOS\UserBundle\Model\UserManagerInterface" alias="fos_user.user_manager.default" public="false"/>
     <service id="fos_user.util.email_canonicalizer" alias="fos_user.util.canonicalizer.default"/>
     <service id="fos_user.util.username_canonicalizer" alias="fos_user.util.canonicalizer.default"/>
     <service id="fos_user.util.token_generator" alias="fos_user.util.token_generator.default"/>
     <service id="fos_user.user_manager" alias="fos_user.user_manager.default"/>
-    <service id="FOS\UserBundle\Model\UserManagerInterface" alias="fos_user.user_manager.default" public="false"/>
+    <service id="fos_user.mailer" alias="fos_user.mailer.default"/>
+    <service id="fos_user.session" alias="session" public="false"/>
     <service id="easy_admin.property_accessor" alias="property_accessor"/>
     <service id="vich_uploader.storage" alias="vich_uploader.storage.file_system"/>
     <service id="vich_uploader.metadata_driver" alias="vich_uploader.metadata_driver.chain" public="false"/>

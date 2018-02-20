@@ -1,23 +1,19 @@
 {% extends "base.html.twig" %}
-{% block stylesheets %}
-    {{ parent() }}
-{% endblock %}
 {% block body %}
     {{ parent() }}
-    <p>Page des plats</p>
+    <div class="row">
     {% for plat in plat %}
-        <div class="col-sm-4">
+
             <div class="card" style="width:400px">
                 <div class="card-body">
                     <h4 class="card-title">{{ plat.name }}</h4>
                     <p class="card-text">{{ plat.price }} €</p>
                     <img src="{{ vich_uploader_asset(plat, 'imageFile') }}" alt="{{ plat.image }}" />
                     <p class="card-text">{{ plat.description }}</p>
+                    <a href="#" class="btn btn-primary">Another link</a>
                 </div>
             </div>
-        </div>
+
     {% endfor %}
-{% endblock %}
-{% block javascripts %}
-    {{ parent() }}
+    </div>
 {% endblock %}

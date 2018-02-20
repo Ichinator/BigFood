@@ -3,4 +3,7 @@
 <div class="fos_user_user_show">
     <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
     <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+    {% if is_granted('ROLE_ADMIN') -%}
+        <p>Vous pouvez vous rediriger vers <a href="{{ path('easyadmin') }}">l'interface d'administration</a> ou bien <a href="#">créer une news</a></p>
+    {% endif %}
 </div>

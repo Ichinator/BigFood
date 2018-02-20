@@ -243,6 +243,7 @@ L\'équipe
     'action.list' => 'Retour à la liste',
     'label.form.empty_value' => 'Aucun(e)',
     '__name__label__' => '__name__label__',
+    'Symfony2 is great' => 'J\'aime Symfony2',
     'coresphere_console.headline.index' => 'Console',
     'coresphere_console.working_directory' => 'Répertoire de travail',
     'coresphere_console.environment' => 'Environnement',

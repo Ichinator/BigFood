@@ -1,3 +1,7 @@
+ichinator_news:
+    resource: "@IchinatorNewsBundle/Resources/config/routing.yml"
+    prefix:   /
+
 ichinator_contact:
     resource: "@IchinatorContactBundle/Resources/config/routing.yml"
     prefix:   /
@@ -21,4 +25,8 @@ easy_admin_bundle:
 coresphere_console:
     resource: .
     type: extra
+
+kms_froala_editor:
+  resource: "@KMSFroalaEditorBundle/Resources/config/routing.yml"
+  prefix:   /froalaeditor
 

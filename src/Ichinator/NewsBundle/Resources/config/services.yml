@@ -1,0 +1,4 @@
+services:
+#    ichinator_news.example:
+#        class: Ichinator\NewsBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
