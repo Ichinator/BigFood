@@ -3,10 +3,13 @@
 namespace Ichinator\NewsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * News
- *
+ * @Vich\Uploadable
  * @ORM\Table(name="news")
  * @ORM\Entity(repositoryClass="Ichinator\NewsBundle\Repository\NewsRepository")
  */
@@ -42,6 +45,25 @@ class News
      */
     private $date;
 
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string
+     */
+    private $image;
+
+    /**
+     * @Vich\UploadableField(mapping="news_images", fileNameProperty="image")
+     * @var File
+     */
+    private $imageFile;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="Comments", mappedBy="news")
+     */
+
+    private $comments;
 
     /**
      * Get id
@@ -128,5 +150,68 @@ class News
     public function __construct()
     {
         $this->date = new \DateTime('NOW');
+    }
+
+
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Add comment
+     *
+     * @param \Ichinator\NewsBundle\Entity\Comments $comment
+     *
+     * @return News
+     */
+    public function addComment(\Ichinator\NewsBundle\Entity\Comments $comment)
+    {
+        $this->comments[] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Remove comment
+     *
+     * @param \Ichinator\NewsBundle\Entity\Comments $comment
+     */
+    public function removeComment(\Ichinator\NewsBundle\Entity\Comments $comment)
+    {
+        $this->comments->removeElement($comment);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 }

@@ -1,3 +1,34 @@
-{{ oneNews.title }}
-{{ oneNews.content|raw }}
-Publié le {{ oneNews.date|date("m/d/Y", "Europe/Paris") }}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {{ parent() }}
+
+
+    <div class="container">
+        <div class="text-center">
+            <h1>{{ oneNews.title }}</h1>
+            <img src="{{ vich_uploader_asset(oneNews, 'imageFile') }}" alt="{{ oneNews.image }}" class="center-block" />
+        </div>
+
+    {{ oneNews.content|raw }}
+    Publié le {{ oneNews.date|date("m/d/Y", "Europe/Paris") }}
+{% if app.user %}
+    <div class="row">
+        <div class="col-sm-8">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% else %}
+    <p>Pour commenter vous devez <a href="{{ path('fos_user_registration_register') }}">vous enregistrer</a> ou <a href="{{ path('fos_user_security_login') }}">vous connecter</a></p>
+{% endif %}
+
+        {% for comments in comments %}
+        <div>
+        {{ comments.content|raw}}
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

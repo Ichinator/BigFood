@@ -10,6 +10,7 @@ parameters:
     app.path.burgers_images: /uploads/images/burgers
     app.path.plats_images: /uploads/images/plats
     app.path.desserts_images: /uploads/images/desserts
+    app.path.news_images: /uploads/images/news
 
 framework:
     #esi: ~
@@ -168,6 +169,10 @@ vich_uploader:
                 desserts_images:
                     uri_prefix:         '%app.path.desserts_images%'
                     upload_destination: '%kernel.root_dir%/../web/uploads/images/desserts'
+                    namer: vich_uploader.namer_uniqid
+                news_images:
+                    uri_prefix:         '%app.path.news_images%'
+                    upload_destination: '%kernel.root_dir%/../web/uploads/images/news'
                     namer: vich_uploader.namer_uniqid
 
 kms_froala_editor:

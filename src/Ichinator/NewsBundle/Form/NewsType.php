@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use KMS\FroalaEditorBundle\Form\Type\FroalaEditorType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class NewsType extends AbstractType
 {
@@ -20,7 +21,12 @@ class NewsType extends AbstractType
         $builder
             ->add('title', TextType::class, array('label' => 'Titre'))
             ->add('content', FroalaEditorType::class, array('label' => 'Contenu'))
-            ->add('submit', SubmitType::class, array('label' => 'Envoyer'));
+            ->add('imageFile', VichImageType::class, array('label' => 'image'))
+            ->add('submit', SubmitType::class, array(
+                'label' => 'Envoyer', 'attr' => array(
+                    'class' => 'btn btn-dark')
+            )
+        );
     }/**
      * {@inheritdoc}
      */

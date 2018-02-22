@@ -28,21 +28,24 @@ class CommandType extends AbstractType
                 'class' => Burger::class,
                 'choice_label' => 'name',
                 'required' => false,
-                'placeholder' => '',
+                'placeholder' => 'Aucun',
             ))
             ->add('plat', EntityType::class, array(
                 'class' => Plat::class,
                 'choice_label' => 'name',
                 'required' => false,
-                'placeholder' => '',
+                'placeholder' => 'Aucun',
             ))
             ->add('dessert', EntityType::class, array(
                 'class' => Dessert::class,
                 'choice_label' => 'name',
                 'required' => false,
-                'placeholder' => '',
+                'placeholder' => 'Aucun',
             ))
-            ->add('date', DateTimeType::class)
+            ->add('date', DateTimeType::class, array(
+                'placeholder' => array(
+                    'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour', 'hour' => 'Heure', 'minute' => 'Minute'
+                )))
             ->add('submit', SubmitType::class)
         ;
     }/**

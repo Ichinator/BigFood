@@ -154,6 +154,7 @@
     <parameter key="app.path.burgers_images">/uploads/images/burgers</parameter>
     <parameter key="app.path.plats_images">/uploads/images/plats</parameter>
     <parameter key="app.path.desserts_images">/uploads/images/desserts</parameter>
+    <parameter key="app.path.news_images">/uploads/images/news</parameter>
     <parameter key="fragment.renderer.hinclude.global_template">null</parameter>
     <parameter key="fragment.path">/_fragment</parameter>
     <parameter key="kernel.secret">ThisTokenIsNotSoSecretChangeIt</parameter>
@@ -699,6 +700,22 @@
         <parameter key="inject_on_load">false</parameter>
         <parameter key="db_driver">orm</parameter>
       </parameter>
+      <parameter key="news_images" type="collection">
+        <parameter key="uri_prefix">/uploads/images/news</parameter>
+        <parameter key="upload_destination">/home/ichinator/Bureau/MesProjetsGIT/BigFood/app/../web/uploads/images/news</parameter>
+        <parameter key="namer" type="collection">
+          <parameter key="service">vich_uploader.namer_uniqid.news_images</parameter>
+          <parameter key="options" type="collection"/>
+        </parameter>
+        <parameter key="directory_namer" type="collection">
+          <parameter key="service">null</parameter>
+          <parameter key="options">null</parameter>
+        </parameter>
+        <parameter key="delete_on_remove">true</parameter>
+        <parameter key="delete_on_update">true</parameter>
+        <parameter key="inject_on_load">false</parameter>
+        <parameter key="db_driver">orm</parameter>
+      </parameter>
     </parameter>
     <parameter key="vich_uploader.file_injector.class">Vich\UploaderBundle\Injector\FileInjector</parameter>
     <parameter key="kms_froala_editor.saveinterval">2500</parameter>
@@ -1008,7 +1025,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>DlSCTq70zcK1r-dKLq-Kvb</argument>
+      <argument>xjfAib8GUXmxv1k1kuvM1K</argument>
       <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1018,7 +1035,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>DlSCTq70zcK1r-dKLq-Kvb</argument>
+      <argument>xjfAib8GUXmxv1k1kuvM1K</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -3613,12 +3630,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>5a8c2db7de2ce7.16331630</argument>
+      <argument>5a8f4180357376.66269917</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>5a8c2db7de2ce7.16331630</argument>
+      <argument>5a8f4180357376.66269917</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -4333,10 +4350,19 @@
         <argument type="service" id="vich_uploader.listener.clean.desserts_images"/>
       </call>
       <call method="addEventSubscriber">
+        <argument type="service" id="vich_uploader.listener.clean.news_images"/>
+      </call>
+      <call method="addEventSubscriber">
         <argument type="service" id="vich_uploader.listener.clean.plats_images"/>
       </call>
       <call method="addEventSubscriber">
         <argument type="service" id="vich_uploader.listener.clean.burgers_images"/>
+      </call>
+      <call method="addEventSubscriber">
+        <argument type="service" id="vich_uploader.listener.upload.news_images"/>
+      </call>
+      <call method="addEventSubscriber">
+        <argument type="service" id="vich_uploader.listener.remove.news_images"/>
       </call>
       <call method="addEventSubscriber">
         <argument type="service" id="vich_uploader.listener.upload.desserts_images"/>
@@ -5263,6 +5289,7 @@
     <service id="vich_uploader.namer_uniqid.burgers_images" class="Vich\UploaderBundle\Naming\UniqidNamer"/>
     <service id="vich_uploader.namer_uniqid.plats_images" class="Vich\UploaderBundle\Naming\UniqidNamer"/>
     <service id="vich_uploader.namer_uniqid.desserts_images" class="Vich\UploaderBundle\Naming\UniqidNamer"/>
+    <service id="vich_uploader.namer_uniqid.news_images" class="Vich\UploaderBundle\Naming\UniqidNamer"/>
     <service id="vich_uploader.adapter.propel" class="Vich\UploaderBundle\Adapter\Propel\PropelORMAdapter" public="false"/>
     <service id="vich_uploader.adapter.mongodb" class="Vich\UploaderBundle\Adapter\ODM\MongoDB\MongoDBAdapter" public="false"/>
     <service id="vich_uploader.adapter.orm" class="Vich\UploaderBundle\Adapter\ORM\DoctrineORMAdapter" public="false"/>
@@ -5470,6 +5497,22 @@
           <argument key="inject_on_load">false</argument>
           <argument key="db_driver">orm</argument>
         </argument>
+        <argument key="news_images" type="collection">
+          <argument key="uri_prefix">/uploads/images/news</argument>
+          <argument key="upload_destination">/home/ichinator/Bureau/MesProjetsGIT/BigFood/app/../web/uploads/images/news</argument>
+          <argument key="namer" type="collection">
+            <argument key="service">vich_uploader.namer_uniqid.news_images</argument>
+            <argument key="options" type="collection"/>
+          </argument>
+          <argument key="directory_namer" type="collection">
+            <argument key="service">null</argument>
+            <argument key="options">null</argument>
+          </argument>
+          <argument key="delete_on_remove">true</argument>
+          <argument key="delete_on_update">true</argument>
+          <argument key="inject_on_load">false</argument>
+          <argument key="db_driver">orm</argument>
+        </argument>
       </argument>
       <argument>_name</argument>
     </service>
@@ -5563,6 +5606,27 @@
     <service id="vich_uploader.listener.upload.desserts_images" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener" public="false">
       <tag name="doctrine.event_subscriber" priority="0"/>
       <argument>desserts_images</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.clean.news_images" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener" public="false">
+      <tag name="doctrine.event_subscriber" priority="50"/>
+      <argument>news_images</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.news_images" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener" public="false">
+      <tag name="doctrine.event_subscriber" priority="0"/>
+      <argument>news_images</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.news_images" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener" public="false">
+      <tag name="doctrine.event_subscriber" priority="0"/>
+      <argument>news_images</argument>
       <argument type="service" id="vich_uploader.adapter.orm"/>
       <argument type="service" id="vich_uploader.metadata_reader"/>
       <argument type="service" id="vich_uploader.upload_handler"/>
@@ -6040,7 +6104,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>FOh9nYA+jr</argument>
       <argument>0</argument>
-      <argument>DlSCTq70zcK1r-dKLq-Kvb</argument>
+      <argument>xjfAib8GUXmxv1k1kuvM1K</argument>
       <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -6048,7 +6112,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>HK5kVLuG4R</argument>
       <argument>0</argument>
-      <argument>DlSCTq70zcK1r-dKLq-Kvb</argument>
+      <argument>xjfAib8GUXmxv1k1kuvM1K</argument>
       <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -6056,7 +6120,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>4qm58Y9Ern</argument>
       <argument>0</argument>
-      <argument>DlSCTq70zcK1r-dKLq-Kvb</argument>
+      <argument>xjfAib8GUXmxv1k1kuvM1K</argument>
       <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -6064,7 +6128,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>6o6u32MTZb</argument>
       <argument>0</argument>
-      <argument>DlSCTq70zcK1r-dKLq-Kvb</argument>
+      <argument>xjfAib8GUXmxv1k1kuvM1K</argument>
       <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>

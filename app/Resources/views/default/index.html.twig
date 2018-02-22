@@ -6,10 +6,23 @@
         <div class="flash-notice">
             {{ message }}
         </div>
+
+        <div class="row">
     {% endfor %}
 
     {% for news in news %}
-        <p>{{ news.title }}</p>
+        <div class="card" style="width:400px">
+            <div class="card-header">
+                <h4 class="card-title">{{ news.title }}</h4>
+            </div>
+            <div class="card-body">
+                <img src="{{ vich_uploader_asset(news, 'imageFile') }}" alt="{{ news.image }}" class="rounded" />
+            </div>
+            <div class="card-footer">
+                <a href="{{ path('oneNewsRoute', { 'id': news.id }) }}" class="btn btn-primary">Voir l'article</a>
+            </div>
+        </div>
     {% endfor %}
+    </div>
 {% endblock %}
 
