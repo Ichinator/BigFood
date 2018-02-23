@@ -5,11 +5,15 @@
     {% for burger in burger %}
 
                 <div class="card" style="width:400px">
+                    <div class="card-header">
+                        <h4 class="card-title">{{ burger.name }} {{ burger.price }} €</h4>
+                    </div>
                     <div class="card-body">
-                        <h4 class="card-title">{{ burger.name }}</h4>
-                        <p class="card-text">{{ burger.price }} €</p>
                         <img src="{{ vich_uploader_asset(burger, 'imageFile') }}" alt="{{ burger.image }}" class="rounded" />
                         <p class="card-text">{{ burger.description }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <p>On mettra ici les like</p>
                     </div>
                 </div>
     {% endfor %}

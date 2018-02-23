@@ -21,29 +21,29 @@ class __TwigTemplate_4479ca5c101842361c19023106a532766d22678849c558ff82e5f53b8a8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_5e0d6b933574a2ac9c62630cc54f0ca1bc5e7fb6d8c7dc16e01eb747ac82ecc1 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_5e0d6b933574a2ac9c62630cc54f0ca1bc5e7fb6d8c7dc16e01eb747ac82ecc1->enter($__internal_5e0d6b933574a2ac9c62630cc54f0ca1bc5e7fb6d8c7dc16e01eb747ac82ecc1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "IchinatorCommandBundle:Default:dessert.html.twig"));
+        $__internal_f5dafa884da22575b340130ebaf47fd4245c46807ae640653017b986b64479c1 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_f5dafa884da22575b340130ebaf47fd4245c46807ae640653017b986b64479c1->enter($__internal_f5dafa884da22575b340130ebaf47fd4245c46807ae640653017b986b64479c1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "IchinatorCommandBundle:Default:dessert.html.twig"));
 
-        $__internal_6225cda26fd506a27d40738445b9831b5032d24497b3137263a65b01bdc641b3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_6225cda26fd506a27d40738445b9831b5032d24497b3137263a65b01bdc641b3->enter($__internal_6225cda26fd506a27d40738445b9831b5032d24497b3137263a65b01bdc641b3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "IchinatorCommandBundle:Default:dessert.html.twig"));
+        $__internal_d4d6ab77cc563944bb0266c088982114adb9a24daf34d824251aa1f3bd731c71 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_d4d6ab77cc563944bb0266c088982114adb9a24daf34d824251aa1f3bd731c71->enter($__internal_d4d6ab77cc563944bb0266c088982114adb9a24daf34d824251aa1f3bd731c71_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "IchinatorCommandBundle:Default:dessert.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_5e0d6b933574a2ac9c62630cc54f0ca1bc5e7fb6d8c7dc16e01eb747ac82ecc1->leave($__internal_5e0d6b933574a2ac9c62630cc54f0ca1bc5e7fb6d8c7dc16e01eb747ac82ecc1_prof);
+        $__internal_f5dafa884da22575b340130ebaf47fd4245c46807ae640653017b986b64479c1->leave($__internal_f5dafa884da22575b340130ebaf47fd4245c46807ae640653017b986b64479c1_prof);
 
         
-        $__internal_6225cda26fd506a27d40738445b9831b5032d24497b3137263a65b01bdc641b3->leave($__internal_6225cda26fd506a27d40738445b9831b5032d24497b3137263a65b01bdc641b3_prof);
+        $__internal_d4d6ab77cc563944bb0266c088982114adb9a24daf34d824251aa1f3bd731c71->leave($__internal_d4d6ab77cc563944bb0266c088982114adb9a24daf34d824251aa1f3bd731c71_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_e53e1d546f820474c61cda82208fa8355e3dbac01f3b51b5efd27f600af99096 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_e53e1d546f820474c61cda82208fa8355e3dbac01f3b51b5efd27f600af99096->enter($__internal_e53e1d546f820474c61cda82208fa8355e3dbac01f3b51b5efd27f600af99096_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_36f70e4d6c543c67c68ede9b989a043484b55fafae47c50d4167bd5ea4317ba7 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_36f70e4d6c543c67c68ede9b989a043484b55fafae47c50d4167bd5ea4317ba7->enter($__internal_36f70e4d6c543c67c68ede9b989a043484b55fafae47c50d4167bd5ea4317ba7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_f72d86ca633732b3e44a27692cd328f1c25b49fc9e7e754e6d686e0599e19178 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_f72d86ca633732b3e44a27692cd328f1c25b49fc9e7e754e6d686e0599e19178->enter($__internal_f72d86ca633732b3e44a27692cd328f1c25b49fc9e7e754e6d686e0599e19178_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_026e348a1bb4176d8cc3b8ecbf01354e740fbfc8a95f4242c1ebc22a10fb0086 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_026e348a1bb4176d8cc3b8ecbf01354e740fbfc8a95f4242c1ebc22a10fb0086->enter($__internal_026e348a1bb4176d8cc3b8ecbf01354e740fbfc8a95f4242c1ebc22a10fb0086_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
         echo "    ";
@@ -58,25 +58,28 @@ class __TwigTemplate_4479ca5c101842361c19023106a532766d22678849c558ff82e5f53b8a8
             // line 6
             echo "
             <div class=\"card\" style=\"width:400px\">
-                <div class=\"card-body\">
+                <div class=\"card-header\">
                     <h4 class=\"card-title\">";
             // line 9
             echo twig_escape_filter($this->env, $this->getAttribute($context["dessert"], "name", array()), "html", null, true);
-            echo "</h4>
-                    <p class=\"card-text\">";
-            // line 10
+            echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["dessert"], "price", array()), "html", null, true);
-            echo " €</p>
+            echo " €</h4>
+                </div>
+                <div class=\"card-body\">
                     <img src=\"";
-            // line 11
+            // line 12
             echo twig_escape_filter($this->env, $this->env->getExtension('Vich\UploaderBundle\Twig\Extension\UploaderExtension')->asset($context["dessert"], "imageFile"), "html", null, true);
             echo "\" alt=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["dessert"], "image", array()), "html", null, true);
             echo "\" />
                     <p class=\"card-text\">";
-            // line 12
+            // line 13
             echo twig_escape_filter($this->env, $this->getAttribute($context["dessert"], "description", array()), "html", null, true);
             echo " €</p>
+                </div>
+                <div class=\"card-footer\">
+                    <p>On mettra ici les like</p>
                 </div>
             </div>
 
@@ -85,14 +88,14 @@ class __TwigTemplate_4479ca5c101842361c19023106a532766d22678849c558ff82e5f53b8a8
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['dessert'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 17
+        // line 21
         echo "    </div>
 ";
         
-        $__internal_f72d86ca633732b3e44a27692cd328f1c25b49fc9e7e754e6d686e0599e19178->leave($__internal_f72d86ca633732b3e44a27692cd328f1c25b49fc9e7e754e6d686e0599e19178_prof);
+        $__internal_026e348a1bb4176d8cc3b8ecbf01354e740fbfc8a95f4242c1ebc22a10fb0086->leave($__internal_026e348a1bb4176d8cc3b8ecbf01354e740fbfc8a95f4242c1ebc22a10fb0086_prof);
 
         
-        $__internal_e53e1d546f820474c61cda82208fa8355e3dbac01f3b51b5efd27f600af99096->leave($__internal_e53e1d546f820474c61cda82208fa8355e3dbac01f3b51b5efd27f600af99096_prof);
+        $__internal_36f70e4d6c543c67c68ede9b989a043484b55fafae47c50d4167bd5ea4317ba7->leave($__internal_36f70e4d6c543c67c68ede9b989a043484b55fafae47c50d4167bd5ea4317ba7_prof);
 
     }
 
@@ -108,7 +111,7 @@ class __TwigTemplate_4479ca5c101842361c19023106a532766d22678849c558ff82e5f53b8a8
 
     public function getDebugInfo()
     {
-        return array (  89 => 17,  78 => 12,  72 => 11,  68 => 10,  64 => 9,  59 => 6,  55 => 5,  49 => 3,  40 => 2,  11 => 1,);
+        return array (  92 => 21,  78 => 13,  72 => 12,  64 => 9,  59 => 6,  55 => 5,  49 => 3,  40 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -128,11 +131,15 @@ class __TwigTemplate_4479ca5c101842361c19023106a532766d22678849c558ff82e5f53b8a8
     {% for dessert in dessert %}
 
             <div class=\"card\" style=\"width:400px\">
+                <div class=\"card-header\">
+                    <h4 class=\"card-title\">{{ dessert.name }} {{ dessert.price }} €</h4>
+                </div>
                 <div class=\"card-body\">
-                    <h4 class=\"card-title\">{{ dessert.name }}</h4>
-                    <p class=\"card-text\">{{ dessert.price }} €</p>
                     <img src=\"{{ vich_uploader_asset(dessert, 'imageFile') }}\" alt=\"{{ dessert.image }}\" />
                     <p class=\"card-text\">{{ dessert.description }} €</p>
+                </div>
+                <div class=\"card-footer\">
+                    <p>On mettra ici les like</p>
                 </div>
             </div>
 

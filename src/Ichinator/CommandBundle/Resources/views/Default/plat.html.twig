@@ -5,11 +5,15 @@
     {% for plat in plat %}
 
             <div class="card" style="width:400px">
+                <div class="card-header">
+                    <h4 class="card-title">{{ plat.name }} {{ plat.price }} €</h4>
+                </div>
                 <div class="card-body">
-                    <h4 class="card-title">{{ plat.name }}</h4>
-                    <p class="card-text">{{ plat.price }} €</p>
                     <img src="{{ vich_uploader_asset(plat, 'imageFile') }}" alt="{{ plat.image }}" />
                     <p class="card-text">{{ plat.description }}</p>
+                </div>
+                <div class="card-footer">
+                    <p>On mettra ici les like</p>
                 </div>
             </div>
 
