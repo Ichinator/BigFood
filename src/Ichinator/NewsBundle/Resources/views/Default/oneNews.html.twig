@@ -27,6 +27,9 @@
 
         {% for comments in comments %}
         <div>
+        <p>
+        {{ comments.user }} a dit:
+        </p>
         {{ comments.content|raw}}
         </div>
     {% endfor %}

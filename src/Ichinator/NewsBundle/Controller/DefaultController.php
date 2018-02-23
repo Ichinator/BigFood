@@ -72,7 +72,7 @@ class DefaultController extends Controller
             $news = $this->getDoctrine()->getRepository(News::class)->find($id);
 
             //$user = new User();
-            $userID = $this->getUser()->getId();
+            $user = $this->getUser();
             //$user = $this->get('security.token_storage')->getToken()->getUser();
             // relates this product to the category
             $comments->setNews($news);

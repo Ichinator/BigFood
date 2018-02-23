@@ -15,20 +15,20 @@ class __TwigTemplate_8bafc7f18f50879a3688fc1a80c5432a8daf10d5027a57ebdd38f39ff38
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_7bb644d3fc49acbb1bf155408d0afc2636cb697f76ab58d9a368794e490e2d47 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_7bb644d3fc49acbb1bf155408d0afc2636cb697f76ab58d9a368794e490e2d47->enter($__internal_7bb644d3fc49acbb1bf155408d0afc2636cb697f76ab58d9a368794e490e2d47_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/images/icon-plus-square.svg"));
+        $__internal_e22a2c98bd7a27a18e84d1e2c239285ac55e994d907cf37e2c58af08db594970 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_e22a2c98bd7a27a18e84d1e2c239285ac55e994d907cf37e2c58af08db594970->enter($__internal_e22a2c98bd7a27a18e84d1e2c239285ac55e994d907cf37e2c58af08db594970_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/images/icon-plus-square.svg"));
 
-        $__internal_748afce4c10689309c4b586daa79d4a7e196eb75a522dbbc123210a81a0d48f7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_748afce4c10689309c4b586daa79d4a7e196eb75a522dbbc123210a81a0d48f7->enter($__internal_748afce4c10689309c4b586daa79d4a7e196eb75a522dbbc123210a81a0d48f7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/images/icon-plus-square.svg"));
+        $__internal_1053ad8c82ea47548f3986e86109dbf0f9dc335ba42394c9b11f3904b37880a9 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_1053ad8c82ea47548f3986e86109dbf0f9dc335ba42394c9b11f3904b37880a9->enter($__internal_1053ad8c82ea47548f3986e86109dbf0f9dc335ba42394c9b11f3904b37880a9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/images/icon-plus-square.svg"));
 
         // line 1
         echo "<svg width=\"1792\" height=\"1792\" viewBox=\"0 0 1792 1792\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1408 960v-128q0-26-19-45t-45-19h-320v-320q0-26-19-45t-45-19h-128q-26 0-45 19t-19 45v320h-320q-26 0-45 19t-19 45v128q0 26 19 45t45 19h320v320q0 26 19 45t45 19h128q26 0 45-19t19-45v-320h320q26 0 45-19t19-45zm256-544v960q0 119-84.5 203.5t-203.5 84.5h-960q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z\"/></svg>
 ";
         
-        $__internal_7bb644d3fc49acbb1bf155408d0afc2636cb697f76ab58d9a368794e490e2d47->leave($__internal_7bb644d3fc49acbb1bf155408d0afc2636cb697f76ab58d9a368794e490e2d47_prof);
+        $__internal_e22a2c98bd7a27a18e84d1e2c239285ac55e994d907cf37e2c58af08db594970->leave($__internal_e22a2c98bd7a27a18e84d1e2c239285ac55e994d907cf37e2c58af08db594970_prof);
 
         
-        $__internal_748afce4c10689309c4b586daa79d4a7e196eb75a522dbbc123210a81a0d48f7->leave($__internal_748afce4c10689309c4b586daa79d4a7e196eb75a522dbbc123210a81a0d48f7_prof);
+        $__internal_1053ad8c82ea47548f3986e86109dbf0f9dc335ba42394c9b11f3904b37880a9->leave($__internal_1053ad8c82ea47548f3986e86109dbf0f9dc335ba42394c9b11f3904b37880a9_prof);
 
     }
 
