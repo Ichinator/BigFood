@@ -63,6 +63,13 @@ class Burger
      */
     private $updatedAt;
 
+
+    /**
+     * @ORM\OneToMany(targetEntity="Comments", mappedBy="burger")
+     */
+
+    private $comments;
+
     /**
      * Get id
      *

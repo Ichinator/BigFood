@@ -35,6 +35,12 @@ class Comments
     private $news;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Ichinator\CommandBundle\Entity\Burger", inversedBy="comments")
+     * @ORM\JoinColumn(name="burger_id", referencedColumnName="id")
+     */
+    private $burger;
+
+    /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="comments")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
@@ -79,27 +85,52 @@ class Comments
         return $this->getContent();
     }
 
+
     /**
-     * Set news
+     * Set user
      *
-     * @param \Ichinator\NewsBundle\Entity\News $news
+     * @param \AppBundle\Entity\User $user
      *
      * @return Comments
      */
-    public function setNews(\Ichinator\NewsBundle\Entity\News $news = null)
+    public function setUser(\AppBundle\Entity\User $user = null)
     {
-        $this->news = $news;
+        $this->user = $user;
 
         return $this;
     }
 
     /**
-     * Get news
+     * Get user
      *
-     * @return \Ichinator\NewsBundle\Entity\News
+     * @return \AppBundle\Entity\User
      */
-    public function getNews()
+    public function getUser()
     {
-        return $this->news;
+        return $this->user;
+    }
+
+    /**
+     * Set burger
+     *
+     * @param \Ichinator\NewsBundle\Entity\Burger $burger
+     *
+     * @return Comments
+     */
+    public function setBurger(\Ichinator\NewsBundle\Entity\Burger $burger = null)
+    {
+        $this->burger = $burger;
+
+        return $this;
+    }
+
+    /**
+     * Get burger
+     *
+     * @return \Ichinator\NewsBundle\Entity\Burger
+     */
+    public function getBurger()
+    {
+        return $this->burger;
     }
 }
