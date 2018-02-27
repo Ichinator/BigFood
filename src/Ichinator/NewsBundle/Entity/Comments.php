@@ -41,6 +41,12 @@ class Comments
     private $burger;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Ichinator\CommandBundle\Entity\Plat", inversedBy="comments")
+     * @ORM\JoinColumn(name="plat_id", referencedColumnName="id")
+     */
+    private $plat;
+
+    /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="comments")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
@@ -156,5 +162,29 @@ class Comments
     public function getNews()
     {
         return $this->news;
+    }
+
+    /**
+     * Set plat
+     *
+     * @param \Ichinator\CommandBundle\Entity\Plat $plat
+     *
+     * @return Comments
+     */
+    public function setPlat(\Ichinator\CommandBundle\Entity\Plat $plat = null)
+    {
+        $this->plat = $plat;
+
+        return $this;
+    }
+
+    /**
+     * Get plat
+     *
+     * @return \Ichinator\CommandBundle\Entity\Plat
+     */
+    public function getPlat()
+    {
+        return $this->plat;
     }
 }

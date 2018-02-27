@@ -182,12 +182,20 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // ichinator_plat
-        if ('/plat' === $pathinfo) {
-            return array (  '_controller' => 'Ichinator\\CommandBundle\\Controller\\FoodController::platAction',  '_route' => 'ichinator_plat',);
+        elseif (0 === strpos($pathinfo, '/plat')) {
+            // ichinator_plat
+            if ('/plat' === $pathinfo) {
+                return array (  '_controller' => 'Ichinator\\CommandBundle\\Controller\\FoodController::platAction',  '_route' => 'ichinator_plat',);
+            }
+
+            // onePlatRoute
+            if (preg_match('#^/plat/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'onePlatRoute')), array (  '_controller' => 'Ichinator\\CommandBundle\\Controller\\FoodController::onePlatAction',));
+            }
+
         }
 
-        if (0 === strpos($pathinfo, '/profile')) {
+        elseif (0 === strpos($pathinfo, '/profile')) {
             // fos_user_profile_show
             if ('/profile' === $trimmedPathinfo) {
                 if ('GET' !== $canonicalMethod) {

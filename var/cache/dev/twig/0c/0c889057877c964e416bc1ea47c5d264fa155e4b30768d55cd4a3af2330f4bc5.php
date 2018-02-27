@@ -1,14 +1,14 @@
 <?php
 
-/* IchinatorCommandBundle:Default:oneBurger.html.twig */
-class __TwigTemplate_0428e52e6aaa4c37e9d4d3e0759d327966d64e6ba421df423271fb12b91107c2 extends Twig_Template
+/* IchinatorCommandBundle:Default:onePlat.html.twig */
+class __TwigTemplate_495584093d51c9d860bec4dd54d22fbf03d6778eab71acf9eda85044d5aba787 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("::base.html.twig", "IchinatorCommandBundle:Default:oneBurger.html.twig", 1);
+        $this->parent = $this->loadTemplate("::base.html.twig", "IchinatorCommandBundle:Default:onePlat.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
         );
@@ -21,29 +21,29 @@ class __TwigTemplate_0428e52e6aaa4c37e9d4d3e0759d327966d64e6ba421df423271fb12b91
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1c03934e6cc26476604176cb29fc9ec0ef125d2d42c3379072bddf6893117577 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_1c03934e6cc26476604176cb29fc9ec0ef125d2d42c3379072bddf6893117577->enter($__internal_1c03934e6cc26476604176cb29fc9ec0ef125d2d42c3379072bddf6893117577_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "IchinatorCommandBundle:Default:oneBurger.html.twig"));
+        $__internal_b461cd0ba59b1ee5c05ced2dcb11be6f5622ee4dd0dfe20bbb1763e3d5e84f2e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_b461cd0ba59b1ee5c05ced2dcb11be6f5622ee4dd0dfe20bbb1763e3d5e84f2e->enter($__internal_b461cd0ba59b1ee5c05ced2dcb11be6f5622ee4dd0dfe20bbb1763e3d5e84f2e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "IchinatorCommandBundle:Default:onePlat.html.twig"));
 
-        $__internal_e9406ee61bf9f0e8cc89a8a50ad1066fa1f3c81a6ad9d56496309edc77b584a5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_e9406ee61bf9f0e8cc89a8a50ad1066fa1f3c81a6ad9d56496309edc77b584a5->enter($__internal_e9406ee61bf9f0e8cc89a8a50ad1066fa1f3c81a6ad9d56496309edc77b584a5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "IchinatorCommandBundle:Default:oneBurger.html.twig"));
+        $__internal_1d83eed4a357815539436c990c1e1de646a55b101f9b34af2a66a0a13ebb9096 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_1d83eed4a357815539436c990c1e1de646a55b101f9b34af2a66a0a13ebb9096->enter($__internal_1d83eed4a357815539436c990c1e1de646a55b101f9b34af2a66a0a13ebb9096_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "IchinatorCommandBundle:Default:onePlat.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_1c03934e6cc26476604176cb29fc9ec0ef125d2d42c3379072bddf6893117577->leave($__internal_1c03934e6cc26476604176cb29fc9ec0ef125d2d42c3379072bddf6893117577_prof);
+        $__internal_b461cd0ba59b1ee5c05ced2dcb11be6f5622ee4dd0dfe20bbb1763e3d5e84f2e->leave($__internal_b461cd0ba59b1ee5c05ced2dcb11be6f5622ee4dd0dfe20bbb1763e3d5e84f2e_prof);
 
         
-        $__internal_e9406ee61bf9f0e8cc89a8a50ad1066fa1f3c81a6ad9d56496309edc77b584a5->leave($__internal_e9406ee61bf9f0e8cc89a8a50ad1066fa1f3c81a6ad9d56496309edc77b584a5_prof);
+        $__internal_1d83eed4a357815539436c990c1e1de646a55b101f9b34af2a66a0a13ebb9096->leave($__internal_1d83eed4a357815539436c990c1e1de646a55b101f9b34af2a66a0a13ebb9096_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_bb63b27a31f49dc802cd6821012047b9b1d59d7bee23001b397be580fadcb4f1 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_bb63b27a31f49dc802cd6821012047b9b1d59d7bee23001b397be580fadcb4f1->enter($__internal_bb63b27a31f49dc802cd6821012047b9b1d59d7bee23001b397be580fadcb4f1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_73e1c58e465cb0e1e2894d23b304c2ef5b2c58b140398fa0fd44e4e92b3ff9e5 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_73e1c58e465cb0e1e2894d23b304c2ef5b2c58b140398fa0fd44e4e92b3ff9e5->enter($__internal_73e1c58e465cb0e1e2894d23b304c2ef5b2c58b140398fa0fd44e4e92b3ff9e5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_bbcaa7d3f4832a8bda8202c1aa733449d7bcd736fbea2f5bdc388c3e840859ff = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_bbcaa7d3f4832a8bda8202c1aa733449d7bcd736fbea2f5bdc388c3e840859ff->enter($__internal_bbcaa7d3f4832a8bda8202c1aa733449d7bcd736fbea2f5bdc388c3e840859ff_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_ea1bffc0f90b4d5c745f8e48aae0c91e2b88c72a94238be7df1d62b6e29719bd = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_ea1bffc0f90b4d5c745f8e48aae0c91e2b88c72a94238be7df1d62b6e29719bd->enter($__internal_ea1bffc0f90b4d5c745f8e48aae0c91e2b88c72a94238be7df1d62b6e29719bd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "
@@ -57,19 +57,19 @@ class __TwigTemplate_0428e52e6aaa4c37e9d4d3e0759d327966d64e6ba421df423271fb12b91
         <div class=\"text-center\">
             <h1>";
         // line 10
-        echo twig_escape_filter($this->env, $this->getAttribute(($context["oneBurger"] ?? $this->getContext($context, "oneBurger")), "name", array()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["onePlat"] ?? $this->getContext($context, "onePlat")), "name", array()), "html", null, true);
         echo "</h1>
             <img src=\"";
         // line 11
-        echo twig_escape_filter($this->env, $this->env->getExtension('Vich\UploaderBundle\Twig\Extension\UploaderExtension')->asset(($context["oneBurger"] ?? $this->getContext($context, "oneBurger")), "imageFile"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('Vich\UploaderBundle\Twig\Extension\UploaderExtension')->asset(($context["onePlat"] ?? $this->getContext($context, "onePlat")), "imageFile"), "html", null, true);
         echo "\" alt=\"";
-        echo twig_escape_filter($this->env, $this->getAttribute(($context["oneBurger"] ?? $this->getContext($context, "oneBurger")), "image", array()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["onePlat"] ?? $this->getContext($context, "onePlat")), "image", array()), "html", null, true);
         echo "\" class=\"center-block\" />
         </div>
 
         ";
         // line 14
-        echo $this->getAttribute(($context["oneBurger"] ?? $this->getContext($context, "oneBurger")), "description", array());
+        echo $this->getAttribute(($context["onePlat"] ?? $this->getContext($context, "onePlat")), "description", array());
         echo "
         ";
         // line 15
@@ -130,16 +130,16 @@ class __TwigTemplate_0428e52e6aaa4c37e9d4d3e0759d327966d64e6ba421df423271fb12b91
         echo "    </div>
 ";
         
-        $__internal_bbcaa7d3f4832a8bda8202c1aa733449d7bcd736fbea2f5bdc388c3e840859ff->leave($__internal_bbcaa7d3f4832a8bda8202c1aa733449d7bcd736fbea2f5bdc388c3e840859ff_prof);
+        $__internal_ea1bffc0f90b4d5c745f8e48aae0c91e2b88c72a94238be7df1d62b6e29719bd->leave($__internal_ea1bffc0f90b4d5c745f8e48aae0c91e2b88c72a94238be7df1d62b6e29719bd_prof);
 
         
-        $__internal_bb63b27a31f49dc802cd6821012047b9b1d59d7bee23001b397be580fadcb4f1->leave($__internal_bb63b27a31f49dc802cd6821012047b9b1d59d7bee23001b397be580fadcb4f1_prof);
+        $__internal_73e1c58e465cb0e1e2894d23b304c2ef5b2c58b140398fa0fd44e4e92b3ff9e5->leave($__internal_73e1c58e465cb0e1e2894d23b304c2ef5b2c58b140398fa0fd44e4e92b3ff9e5_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "IchinatorCommandBundle:Default:oneBurger.html.twig";
+        return "IchinatorCommandBundle:Default:onePlat.html.twig";
     }
 
     public function isTraitable()
@@ -171,11 +171,11 @@ class __TwigTemplate_0428e52e6aaa4c37e9d4d3e0759d327966d64e6ba421df423271fb12b91
 
     <div class=\"container\">
         <div class=\"text-center\">
-            <h1>{{ oneBurger.name }}</h1>
-            <img src=\"{{ vich_uploader_asset(oneBurger, 'imageFile') }}\" alt=\"{{ oneBurger.image }}\" class=\"center-block\" />
+            <h1>{{ onePlat.name }}</h1>
+            <img src=\"{{ vich_uploader_asset(onePlat, 'imageFile') }}\" alt=\"{{ onePlat.image }}\" class=\"center-block\" />
         </div>
 
-        {{ oneBurger.description|raw }}
+        {{ onePlat.description|raw }}
         {% if app.user %}
             <div class=\"row\">
                 <div class=\"col-sm-8\">
@@ -197,6 +197,6 @@ class __TwigTemplate_0428e52e6aaa4c37e9d4d3e0759d327966d64e6ba421df423271fb12b91
             </div>
         {% endfor %}
     </div>
-{% endblock %}", "IchinatorCommandBundle:Default:oneBurger.html.twig", "/home/ichinator/Bureau/MesProjetsGIT/BigFood/src/Ichinator/CommandBundle/Resources/views/Default/oneBurger.html.twig");
+{% endblock %}", "IchinatorCommandBundle:Default:onePlat.html.twig", "/home/ichinator/Bureau/MesProjetsGIT/BigFood/src/Ichinator/CommandBundle/Resources/views/Default/onePlat.html.twig");
     }
 }
