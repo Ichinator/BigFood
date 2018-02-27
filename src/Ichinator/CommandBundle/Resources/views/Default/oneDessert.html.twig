@@ -1,0 +1,36 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    {{ parent() }}
+
+
+    <div class="container">
+        <div class="text-center">
+            <h1>{{ oneDessert.name }}</h1>
+            <img src="{{ vich_uploader_asset(oneDessert, 'imageFile') }}" alt="{{ oneDessert.image }}" class="center-block" />
+        </div>
+
+        {{ oneDessert.description|raw }}
+        {% if app.user %}
+            <div class="row">
+                <div class="col-sm-8">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        {% else %}
+            <p>Pour commenter vous devez <a href="{{ path('fos_user_registration_register') }}">vous enregistrer</a> ou <a href="{{ path('fos_user_security_login') }}">vous connecter</a></p>
+        {% endif %}
+
+        {% for comments in comments %}
+            <div>
+                <p>
+                    {{ comments.user }} a dit:
+                </p>
+                {{ comments.content|raw}}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

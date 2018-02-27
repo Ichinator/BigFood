@@ -101,4 +101,33 @@ class FoodController extends Controller
         $onePlat = $this->getDoctrine()->getManager()->getRepository(Plat::class)->find($id);
         return $this->render('IchinatorCommandBundle:Default:onePlat.html.twig', array('onePlat' => $onePlat, 'form' => $formView, 'comments' => $comments));
     }
+
+    public function oneDessertAction($id, Request $request){
+
+        $comments = new Comments();
+        $form = $this->createForm(CommentsType::class, $comments);
+        $form->handleRequest($request);
+        $formView = $form->createView();
+
+        if($form->isSubmitted() && $form->isValid()){
+            $comments->setContent($form["content"]->getData());
+
+            $dessert = new Dessert();
+            $dessert = $this->getDoctrine()->getRepository(dessert::class)->find($id);
+            $user = $this->getUser();
+            $comments->setDessert($dessert);
+            $comments->setUser($user);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($user);
+            $em->persist($dessert);
+            $em->persist($comments);
+            $em->flush();
+        }
+
+        $comments = $this->getDoctrine()->getRepository(Comments::class)->findDessertComments($id);
+
+        $oneDessert = $this->getDoctrine()->getManager()->getRepository(Dessert::class)->find($id);
+        return $this->render('IchinatorCommandBundle:Default:oneDessert.html.twig', array('oneDessert' => $oneDessert, 'form' => $formView, 'comments' => $comments));
+    }
 }

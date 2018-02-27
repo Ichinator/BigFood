@@ -47,6 +47,12 @@ class Comments
     private $plat;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Ichinator\CommandBundle\Entity\Dessert", inversedBy="comments")
+     * @ORM\JoinColumn(name="dessert_id", referencedColumnName="id")
+     */
+    private $dessert;
+
+    /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="comments")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
@@ -186,5 +192,29 @@ class Comments
     public function getPlat()
     {
         return $this->plat;
+    }
+
+    /**
+     * Set dessert
+     *
+     * @param \Ichinator\CommandBundle\Entity\Dessert $dessert
+     *
+     * @return Comments
+     */
+    public function setDessert(\Ichinator\CommandBundle\Entity\Dessert $dessert = null)
+    {
+        $this->dessert = $dessert;
+
+        return $this;
+    }
+
+    /**
+     * Get dessert
+     *
+     * @return \Ichinator\CommandBundle\Entity\Dessert
+     */
+    public function getDessert()
+    {
+        return $this->dessert;
     }
 }

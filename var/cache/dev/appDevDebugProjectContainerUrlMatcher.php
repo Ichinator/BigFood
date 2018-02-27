@@ -235,9 +235,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // ichinator_dessert
-        if ('/dessert' === $pathinfo) {
-            return array (  '_controller' => 'Ichinator\\CommandBundle\\Controller\\FoodController::dessertAction',  '_route' => 'ichinator_dessert',);
+        elseif (0 === strpos($pathinfo, '/dessert')) {
+            // ichinator_dessert
+            if ('/dessert' === $pathinfo) {
+                return array (  '_controller' => 'Ichinator\\CommandBundle\\Controller\\FoodController::dessertAction',  '_route' => 'ichinator_dessert',);
+            }
+
+            // oneDessertRoute
+            if (preg_match('#^/dessert/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'oneDessertRoute')), array (  '_controller' => 'Ichinator\\CommandBundle\\Controller\\FoodController::oneDessertAction',));
+            }
+
         }
 
         // homepage

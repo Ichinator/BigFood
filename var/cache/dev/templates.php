@@ -160,6 +160,7 @@
   'EasyAdminBundle:data_collector:icon.svg.twig' => __DIR__.'/../../../vendor/javiereguiluz/easyadmin-bundle/src/Resources/views/data_collector/icon.svg.twig',
   'EasyAdminBundle:data_collector:easyadmin.html.twig' => __DIR__.'/../../../vendor/javiereguiluz/easyadmin-bundle/src/Resources/views/data_collector/easyadmin.html.twig',
   'IchinatorCommandBundle:Default:oneBurger.html.twig' => __DIR__.'/../../../src/Ichinator/CommandBundle/Resources/views/Default/oneBurger.html.twig',
+  'IchinatorCommandBundle:Default:oneDessert.html.twig' => __DIR__.'/../../../src/Ichinator/CommandBundle/Resources/views/Default/oneDessert.html.twig',
   'IchinatorCommandBundle:Default:dessert.html.twig' => __DIR__.'/../../../src/Ichinator/CommandBundle/Resources/views/Default/dessert.html.twig',
   'IchinatorCommandBundle:Default:onePlat.html.twig' => __DIR__.'/../../../src/Ichinator/CommandBundle/Resources/views/Default/onePlat.html.twig',
   'IchinatorCommandBundle:Default:plat.html.twig' => __DIR__.'/../../../src/Ichinator/CommandBundle/Resources/views/Default/plat.html.twig',

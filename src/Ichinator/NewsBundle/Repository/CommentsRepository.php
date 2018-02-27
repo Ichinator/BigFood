@@ -57,4 +57,20 @@ class CommentsRepository extends \Doctrine\ORM\EntityRepository
         return $query->getResult();
 
     }
+
+    public function findDessertComments($id)
+
+    {
+
+        $query = $this->_em->createQuery('SELECT a FROM IchinatorNewsBundle:Comments a WHERE a.dessert = :id');
+
+        $query->setParameter('id', $id);
+
+
+
+        // Utilisation de getSingleResult car la requête ne doit retourner qu'un seul résultat
+
+        return $query->getResult();
+
+    }
 }
