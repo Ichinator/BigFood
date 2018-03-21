@@ -13,7 +13,7 @@
                     <p class="card-text">{{ plat.description }}</p>
                 </div>
                 <div class="card-footer">
-                    <p>On mettra ici les like</p>
+                    <a href="{{ path('onePlatRoute', { 'id': plat.id }) }}" class="btn btn-primary">Voir le plat</a>
                 </div>
             </div>
 

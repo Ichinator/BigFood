@@ -21,29 +21,29 @@ class __TwigTemplate_4479ca5c101842361c19023106a532766d22678849c558ff82e5f53b8a8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_19a722590b1992d09fd25ed77491da8552ca303cbf795a1fcbdae5097450e6c9 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_19a722590b1992d09fd25ed77491da8552ca303cbf795a1fcbdae5097450e6c9->enter($__internal_19a722590b1992d09fd25ed77491da8552ca303cbf795a1fcbdae5097450e6c9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "IchinatorCommandBundle:Default:dessert.html.twig"));
+        $__internal_87b46a5eddc4ae3a6b0b1bbace5397498cfaf3d7a5b6a752f54331005d361a79 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_87b46a5eddc4ae3a6b0b1bbace5397498cfaf3d7a5b6a752f54331005d361a79->enter($__internal_87b46a5eddc4ae3a6b0b1bbace5397498cfaf3d7a5b6a752f54331005d361a79_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "IchinatorCommandBundle:Default:dessert.html.twig"));
 
-        $__internal_a7810d6b4e5939eba9a400e5eb24004fb85640d139acd8c0441caa9558eb4ea6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_a7810d6b4e5939eba9a400e5eb24004fb85640d139acd8c0441caa9558eb4ea6->enter($__internal_a7810d6b4e5939eba9a400e5eb24004fb85640d139acd8c0441caa9558eb4ea6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "IchinatorCommandBundle:Default:dessert.html.twig"));
+        $__internal_5933c1f4dbd3e392ce13b7636556ac3ca6f693f4b0bdc836f7251afbc2c79b05 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_5933c1f4dbd3e392ce13b7636556ac3ca6f693f4b0bdc836f7251afbc2c79b05->enter($__internal_5933c1f4dbd3e392ce13b7636556ac3ca6f693f4b0bdc836f7251afbc2c79b05_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "IchinatorCommandBundle:Default:dessert.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_19a722590b1992d09fd25ed77491da8552ca303cbf795a1fcbdae5097450e6c9->leave($__internal_19a722590b1992d09fd25ed77491da8552ca303cbf795a1fcbdae5097450e6c9_prof);
+        $__internal_87b46a5eddc4ae3a6b0b1bbace5397498cfaf3d7a5b6a752f54331005d361a79->leave($__internal_87b46a5eddc4ae3a6b0b1bbace5397498cfaf3d7a5b6a752f54331005d361a79_prof);
 
         
-        $__internal_a7810d6b4e5939eba9a400e5eb24004fb85640d139acd8c0441caa9558eb4ea6->leave($__internal_a7810d6b4e5939eba9a400e5eb24004fb85640d139acd8c0441caa9558eb4ea6_prof);
+        $__internal_5933c1f4dbd3e392ce13b7636556ac3ca6f693f4b0bdc836f7251afbc2c79b05->leave($__internal_5933c1f4dbd3e392ce13b7636556ac3ca6f693f4b0bdc836f7251afbc2c79b05_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_17b8892e9d6e9b6fab7d8a2aa279fa737c87644cfd361e0425995535f9f916cd = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_17b8892e9d6e9b6fab7d8a2aa279fa737c87644cfd361e0425995535f9f916cd->enter($__internal_17b8892e9d6e9b6fab7d8a2aa279fa737c87644cfd361e0425995535f9f916cd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_a2470bb25e3f68e64f8f3054dbf344763c2cf871dc30197b4da70aae4e1e2d8c = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_a2470bb25e3f68e64f8f3054dbf344763c2cf871dc30197b4da70aae4e1e2d8c->enter($__internal_a2470bb25e3f68e64f8f3054dbf344763c2cf871dc30197b4da70aae4e1e2d8c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_cdd749d9cf68003493f59bcbb601baf770c60a68286db4368099661e55888a74 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_cdd749d9cf68003493f59bcbb601baf770c60a68286db4368099661e55888a74->enter($__internal_cdd749d9cf68003493f59bcbb601baf770c60a68286db4368099661e55888a74_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_5a3cb1837ae1d3efae8f509e4dc6b7bacfcd38c3744f348c753f0a9ee149df0d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_5a3cb1837ae1d3efae8f509e4dc6b7bacfcd38c3744f348c753f0a9ee149df0d->enter($__internal_5a3cb1837ae1d3efae8f509e4dc6b7bacfcd38c3744f348c753f0a9ee149df0d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
         echo "    ";
@@ -80,6 +80,10 @@ class __TwigTemplate_4479ca5c101842361c19023106a532766d22678849c558ff82e5f53b8a8
                 </div>
                 <div class=\"card-footer\">
                     <p>On mettra ici les like</p>
+                    <a href=\"";
+            // line 17
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("oneDessertRoute", array("id" => $this->getAttribute($context["dessert"], "id", array()))), "html", null, true);
+            echo "\" class=\"btn btn-primary\">Voir le dessert</a>
                 </div>
             </div>
 
@@ -88,14 +92,14 @@ class __TwigTemplate_4479ca5c101842361c19023106a532766d22678849c558ff82e5f53b8a8
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['dessert'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 21
+        // line 22
         echo "    </div>
 ";
         
-        $__internal_cdd749d9cf68003493f59bcbb601baf770c60a68286db4368099661e55888a74->leave($__internal_cdd749d9cf68003493f59bcbb601baf770c60a68286db4368099661e55888a74_prof);
+        $__internal_5a3cb1837ae1d3efae8f509e4dc6b7bacfcd38c3744f348c753f0a9ee149df0d->leave($__internal_5a3cb1837ae1d3efae8f509e4dc6b7bacfcd38c3744f348c753f0a9ee149df0d_prof);
 
         
-        $__internal_17b8892e9d6e9b6fab7d8a2aa279fa737c87644cfd361e0425995535f9f916cd->leave($__internal_17b8892e9d6e9b6fab7d8a2aa279fa737c87644cfd361e0425995535f9f916cd_prof);
+        $__internal_a2470bb25e3f68e64f8f3054dbf344763c2cf871dc30197b4da70aae4e1e2d8c->leave($__internal_a2470bb25e3f68e64f8f3054dbf344763c2cf871dc30197b4da70aae4e1e2d8c_prof);
 
     }
 
@@ -111,7 +115,7 @@ class __TwigTemplate_4479ca5c101842361c19023106a532766d22678849c558ff82e5f53b8a8
 
     public function getDebugInfo()
     {
-        return array (  92 => 21,  78 => 13,  72 => 12,  64 => 9,  59 => 6,  55 => 5,  49 => 3,  40 => 2,  11 => 1,);
+        return array (  96 => 22,  85 => 17,  78 => 13,  72 => 12,  64 => 9,  59 => 6,  55 => 5,  49 => 3,  40 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -140,6 +144,7 @@ class __TwigTemplate_4479ca5c101842361c19023106a532766d22678849c558ff82e5f53b8a8
                 </div>
                 <div class=\"card-footer\">
                     <p>On mettra ici les like</p>
+                    <a href=\"{{ path('oneDessertRoute', { 'id': dessert.id }) }}\" class=\"btn btn-primary\">Voir le dessert</a>
                 </div>
             </div>
 

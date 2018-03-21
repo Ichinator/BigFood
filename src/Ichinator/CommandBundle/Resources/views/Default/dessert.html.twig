@@ -13,7 +13,7 @@
                     <p class="card-text">{{ dessert.description }} €</p>
                 </div>
                 <div class="card-footer">
-                    <p>On mettra ici les like</p>
+                    <a href="{{ path('oneDessertRoute', { 'id': dessert.id }) }}" class="btn btn-primary">Voir le dessert</a>
                 </div>
             </div>
 

@@ -13,7 +13,7 @@
                         <p class="card-text">{{ burger.description }}</p>
                     </div>
                     <div class="card-footer">
-                        <p>On mettra ici les like</p>
+                        <a href="{{ path('oneBurgerRoute', { 'id': burger.id }) }}" class="btn btn-primary">Voir le burger</a>
                     </div>
                 </div>
     {% endfor %}

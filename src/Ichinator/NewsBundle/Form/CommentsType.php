@@ -17,7 +17,7 @@ class CommentsType extends AbstractType
     {
         $builder
             ->add('content', FroalaEditorType::class)
-            ->add('submit', SubmitType::class);
+            ->add('submit', SubmitType::class, array('label' => 'Envoyer commentaire'));
     }/**
      * {@inheritdoc}
      */

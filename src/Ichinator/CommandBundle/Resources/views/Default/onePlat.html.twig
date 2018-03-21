@@ -5,23 +5,24 @@
     {{ parent() }}
 
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="text-center">
             <h1>{{ onePlat.name }}</h1>
-            <img src="{{ vich_uploader_asset(onePlat, 'imageFile') }}" alt="{{ onePlat.image }}" class="center-block" />
+            <img src="{{ vich_uploader_asset(onePlat, 'imageFile') }}" alt="{{ onePlat.image }}" class="center-block"/>
         </div>
 
         {{ onePlat.description|raw }}
         {% if app.user %}
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-12">
                     {{ form_start(form) }}
                     {{ form_widget(form) }}
                     {{ form_end(form) }}
                 </div>
             </div>
         {% else %}
-            <p>Pour commenter vous devez <a href="{{ path('fos_user_registration_register') }}">vous enregistrer</a> ou <a href="{{ path('fos_user_security_login') }}">vous connecter</a></p>
+            <p>Pour commenter vous devez <a href="{{ path('fos_user_registration_register') }}">vous enregistrer</a> ou
+                <a href="{{ path('fos_user_security_login') }}">vous connecter</a></p>
         {% endif %}
 
         {% for comments in comments %}
@@ -29,7 +30,7 @@
                 <p>
                     {{ comments.user }} a dit:
                 </p>
-                {{ comments.content|raw}}
+                {{ comments.content|raw }}
             </div>
         {% endfor %}
     </div>

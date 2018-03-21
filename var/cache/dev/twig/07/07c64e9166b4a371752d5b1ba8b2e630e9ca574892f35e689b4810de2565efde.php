@@ -21,29 +21,29 @@ class __TwigTemplate_02382702a6173b30c984378ebe217f0b4883948db681722d635bbfa129a
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_806e0327d73b1642ad994907b025d01cba234a24ba5c0bb9e647ad44ff8faff6 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_806e0327d73b1642ad994907b025d01cba234a24ba5c0bb9e647ad44ff8faff6->enter($__internal_806e0327d73b1642ad994907b025d01cba234a24ba5c0bb9e647ad44ff8faff6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "IchinatorCommandBundle:Default:burger.html.twig"));
+        $__internal_66e486bf4b02b1b64531c47c5197c5b521892b58b4f20a8ed33ca0b9a97551f9 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_66e486bf4b02b1b64531c47c5197c5b521892b58b4f20a8ed33ca0b9a97551f9->enter($__internal_66e486bf4b02b1b64531c47c5197c5b521892b58b4f20a8ed33ca0b9a97551f9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "IchinatorCommandBundle:Default:burger.html.twig"));
 
-        $__internal_3003762b347185d3a72e4638836cfb365d9192daeb224ee08bfdb922232ed691 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_3003762b347185d3a72e4638836cfb365d9192daeb224ee08bfdb922232ed691->enter($__internal_3003762b347185d3a72e4638836cfb365d9192daeb224ee08bfdb922232ed691_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "IchinatorCommandBundle:Default:burger.html.twig"));
+        $__internal_80a08c14f3fcc1b80834c7e00a5f69a7513916101679c7249505a951f31740f5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_80a08c14f3fcc1b80834c7e00a5f69a7513916101679c7249505a951f31740f5->enter($__internal_80a08c14f3fcc1b80834c7e00a5f69a7513916101679c7249505a951f31740f5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "IchinatorCommandBundle:Default:burger.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_806e0327d73b1642ad994907b025d01cba234a24ba5c0bb9e647ad44ff8faff6->leave($__internal_806e0327d73b1642ad994907b025d01cba234a24ba5c0bb9e647ad44ff8faff6_prof);
+        $__internal_66e486bf4b02b1b64531c47c5197c5b521892b58b4f20a8ed33ca0b9a97551f9->leave($__internal_66e486bf4b02b1b64531c47c5197c5b521892b58b4f20a8ed33ca0b9a97551f9_prof);
 
         
-        $__internal_3003762b347185d3a72e4638836cfb365d9192daeb224ee08bfdb922232ed691->leave($__internal_3003762b347185d3a72e4638836cfb365d9192daeb224ee08bfdb922232ed691_prof);
+        $__internal_80a08c14f3fcc1b80834c7e00a5f69a7513916101679c7249505a951f31740f5->leave($__internal_80a08c14f3fcc1b80834c7e00a5f69a7513916101679c7249505a951f31740f5_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_3ea23934de68d954aeeb4b310e904e482c639b4b747eb285a2ef384519cb5cc3 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_3ea23934de68d954aeeb4b310e904e482c639b4b747eb285a2ef384519cb5cc3->enter($__internal_3ea23934de68d954aeeb4b310e904e482c639b4b747eb285a2ef384519cb5cc3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_6674ecd3e6b9dc088b2ce1839e9636792c963922e0b22eb0d7af6d412a4e70df = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_6674ecd3e6b9dc088b2ce1839e9636792c963922e0b22eb0d7af6d412a4e70df->enter($__internal_6674ecd3e6b9dc088b2ce1839e9636792c963922e0b22eb0d7af6d412a4e70df_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_3a97e3a0ccafa51c3d3cea38021c30b3d367d3969ebffb59dfe055bcc54e3c18 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_3a97e3a0ccafa51c3d3cea38021c30b3d367d3969ebffb59dfe055bcc54e3c18->enter($__internal_3a97e3a0ccafa51c3d3cea38021c30b3d367d3969ebffb59dfe055bcc54e3c18_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_780dca2b84e2bd89b0c0dc033a030ce41dec41f841e93fce37f37b26c7779925 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_780dca2b84e2bd89b0c0dc033a030ce41dec41f841e93fce37f37b26c7779925->enter($__internal_780dca2b84e2bd89b0c0dc033a030ce41dec41f841e93fce37f37b26c7779925_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
         echo "    ";
@@ -79,7 +79,10 @@ class __TwigTemplate_02382702a6173b30c984378ebe217f0b4883948db681722d635bbfa129a
             echo "</p>
                     </div>
                     <div class=\"card-footer\">
-                        <p>On mettra ici les like</p>
+                        <a href=\"";
+            // line 16
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("oneBurgerRoute", array("id" => $this->getAttribute($context["burger"], "id", array()))), "html", null, true);
+            echo "\" class=\"btn btn-primary\">Voir le burger</a>
                     </div>
                 </div>
     ";
@@ -91,10 +94,10 @@ class __TwigTemplate_02382702a6173b30c984378ebe217f0b4883948db681722d635bbfa129a
         echo "    </div>
 ";
         
-        $__internal_3a97e3a0ccafa51c3d3cea38021c30b3d367d3969ebffb59dfe055bcc54e3c18->leave($__internal_3a97e3a0ccafa51c3d3cea38021c30b3d367d3969ebffb59dfe055bcc54e3c18_prof);
+        $__internal_780dca2b84e2bd89b0c0dc033a030ce41dec41f841e93fce37f37b26c7779925->leave($__internal_780dca2b84e2bd89b0c0dc033a030ce41dec41f841e93fce37f37b26c7779925_prof);
 
         
-        $__internal_3ea23934de68d954aeeb4b310e904e482c639b4b747eb285a2ef384519cb5cc3->leave($__internal_3ea23934de68d954aeeb4b310e904e482c639b4b747eb285a2ef384519cb5cc3_prof);
+        $__internal_6674ecd3e6b9dc088b2ce1839e9636792c963922e0b22eb0d7af6d412a4e70df->leave($__internal_6674ecd3e6b9dc088b2ce1839e9636792c963922e0b22eb0d7af6d412a4e70df_prof);
 
     }
 
@@ -110,7 +113,7 @@ class __TwigTemplate_02382702a6173b30c984378ebe217f0b4883948db681722d635bbfa129a
 
     public function getDebugInfo()
     {
-        return array (  91 => 20,  78 => 13,  72 => 12,  64 => 9,  59 => 6,  55 => 5,  49 => 3,  40 => 2,  11 => 1,);
+        return array (  94 => 20,  84 => 16,  78 => 13,  72 => 12,  64 => 9,  59 => 6,  55 => 5,  49 => 3,  40 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -138,7 +141,7 @@ class __TwigTemplate_02382702a6173b30c984378ebe217f0b4883948db681722d635bbfa129a
                         <p class=\"card-text\">{{ burger.description }}</p>
                     </div>
                     <div class=\"card-footer\">
-                        <p>On mettra ici les like</p>
+                        <a href=\"{{ path('oneBurgerRoute', { 'id': burger.id }) }}\" class=\"btn btn-primary\">Voir le burger</a>
                     </div>
                 </div>
     {% endfor %}
