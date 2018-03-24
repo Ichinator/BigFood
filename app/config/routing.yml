@@ -27,6 +27,6 @@ coresphere_console:
     type: extra
 
 kms_froala_editor:
-  resource: "@KMSFroalaEditorBundle/Resources/config/routing.yml"
-  prefix:   /froalaeditor
+    resource: "@KMSFroalaEditorBundle/Resources/config/routing.yml"
+    prefix:   /froalaeditor
 

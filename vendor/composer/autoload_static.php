@@ -71,6 +71,8 @@ class ComposerStaticInitfbdfe5f358c22a63d896f981079717c4
         ),
         'I' => 
         array (
+            'Ivory\\JsonBuilder\\' => 18,
+            'Ivory\\CKEditorBundle\\' => 21,
             'Incenteev\\ParameterHandler\\' => 27,
         ),
         'F' => 
@@ -213,6 +215,14 @@ class ComposerStaticInitfbdfe5f358c22a63d896f981079717c4
         'JavierEguiluz\\Bundle\\EasyAdminBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/javiereguiluz/easyadmin-bundle/legacy',
+        ),
+        'Ivory\\JsonBuilder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egeloen/json-builder/src',
+        ),
+        'Ivory\\CKEditorBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egeloen/ckeditor-bundle',
         ),
         'Incenteev\\ParameterHandler\\' => 
         array (
