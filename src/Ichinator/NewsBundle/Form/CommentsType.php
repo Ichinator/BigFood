@@ -2,7 +2,7 @@
 
 namespace Ichinator\NewsBundle\Form;
 
-use KMS\FroalaEditorBundle\Form\Type\FroalaEditorType;
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -16,7 +16,7 @@ class CommentsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('content', FroalaEditorType::class)
+            ->add('content', CKEditorType::class)
             ->add('submit', SubmitType::class, array('label' => 'Envoyer commentaire'));
     }/**
      * {@inheritdoc}

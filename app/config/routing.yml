@@ -22,10 +22,6 @@ easy_admin_bundle:
     type:     annotation
     prefix:   /admin
 
-coresphere_console:
-    resource: .
-    type: extra
-
 kms_froala_editor:
     resource: "@KMSFroalaEditorBundle/Resources/config/routing.yml"
     prefix:   /froalaeditor
