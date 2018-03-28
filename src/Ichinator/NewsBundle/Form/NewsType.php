@@ -2,13 +2,12 @@
 
 namespace Ichinator\NewsBundle\Form;
 
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use KMS\FroalaEditorBundle\Form\Type\FroalaEditorType;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class NewsType extends AbstractType
@@ -20,7 +19,7 @@ class NewsType extends AbstractType
     {
         $builder
             ->add('title', TextType::class, array('label' => 'Titre'))
-            ->add('content', FroalaEditorType::class, array('label' => 'Contenu'))
+            ->add('content', CKEditorType::class, array('label' => 'Contenu'))
             ->add('imageFile', VichImageType::class, array('label' => 'image'))
             ->add('submit', SubmitType::class, array(
                 'label' => 'Envoyer', 'attr' => array(

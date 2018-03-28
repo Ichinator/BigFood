@@ -6,7 +6,7 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: fr
     app.path.burgers_images: /uploads/images/burgers
     app.path.plats_images: /uploads/images/plats
     app.path.desserts_images: /uploads/images/desserts
@@ -100,7 +100,7 @@ easy_admin:
                                             fields:
                                                 - { property: 'name', label: 'Nom du burger' }
                                                 - { property: 'price', label: 'Prix du burger' }
-                                                - { property: 'description', label: 'Description' }
+                                                - { property: 'description', label: 'Description', type: 'ckeditor' }
                                                 - { property: 'imageFile', type: 'file' }
             Plat:
                             class: Ichinator\CommandBundle\Entity\Plat
@@ -111,7 +111,7 @@ easy_admin:
                                             fields:
                                                 - { property: 'name', label: 'Nom du plat' }
                                                 - { property: 'price', label: 'Prix du plat' }
-                                                - { property: 'description', label: 'Description' }
+                                                - { property: 'description', label: 'Description', type: 'ckeditor' }
                                                 - { property: 'imageFile', type: 'file' }
             Dessert:
                             class: Ichinator\CommandBundle\Entity\Dessert
@@ -122,7 +122,7 @@ easy_admin:
                                             fields:
                                                 - { property: 'name', label: 'Nom du dessert' }
                                                 - { property: 'price', label: 'Prix du dessert' }
-                                                - { property: 'description', label: 'Description' }
+                                                - { property: 'description', label: 'Description', type: 'ckeditor' }
                                                 - { property: 'imageFile', type: 'file' }
             Command:
                             class: Ichinator\CommandBundle\Entity\Command

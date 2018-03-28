@@ -5,7 +5,6 @@ namespace Ichinator\CommandBundle\Form;
 use Ichinator\CommandBundle\Entity\Burger;
 use Ichinator\CommandBundle\Entity\Dessert;
 use Ichinator\CommandBundle\Entity\Plat;
-use Ichinator\CommandBundle\IchinatorCommandBundle;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -46,7 +45,7 @@ class CommandType extends AbstractType
                 'placeholder' => array(
                     'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour', 'hour' => 'Heure', 'minute' => 'Minute'
                 )))
-            ->add('submit', SubmitType::class)
+            ->add('submit', SubmitType::class, array('label' => 'Commander'))
         ;
     }/**
      * {@inheritdoc}

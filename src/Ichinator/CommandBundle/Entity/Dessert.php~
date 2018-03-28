@@ -58,6 +58,12 @@ class Dessert
     private $imageFile;
 
     /**
+     * @ORM\OneToMany(targetEntity="Ichinator\NewsBundle\Entity\Comments", mappedBy="dessert")
+     */
+
+    private $comments;
+
+    /**
      * @ORM\Column(type="datetime")
      * @var \DateTime
      */

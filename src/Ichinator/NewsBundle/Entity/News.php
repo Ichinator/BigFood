@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * News
@@ -28,6 +29,7 @@ class News
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255, unique=true)
+     * @Assert\NotBlank(message="Vous avez oublié le titre")
      */
     private $title;
 
@@ -35,6 +37,7 @@ class News
      * @var string
      *
      * @ORM\Column(name="content", type="text")
+     * @Assert\NotBlank(message="Vous avez oublié le contenu")
      */
     private $content;
 
@@ -55,6 +58,8 @@ class News
     /**
      * @Vich\UploadableField(mapping="news_images", fileNameProperty="image")
      * @var File
+     *
+     * @Assert\NotBlank(message="Vous avez oublié l image")
      */
     private $imageFile;
 

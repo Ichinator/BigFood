@@ -1,18 +1,22 @@
-{% extends 'base.html.twig' %}
+{% extends '::base.html.twig' %}
 
 {% block body %}
 
     {{ parent() }}
 
-
     <div class="container-fluid">
         <div class="text-center">
-            <h1>{{ oneNews.title }}</h1>
-            <img src="{{ vich_uploader_asset(oneNews, 'imageFile') }}" alt="{{ oneNews.image }}" class="center-block"/>
+            <h1>{{ oneDessert.name }}</h1>
+            <img src="{{ vich_uploader_asset(oneDessert, 'imageFile') }}" alt="{{ oneDessert.image }}"
+                 class="center-block"/>
         </div>
-
-        {{ oneNews.content|raw }}
-        Publié le {{ oneNews.date|date("m/d/Y", "Europe/Paris") }}
+        <h4>Prix: {{ oneDessert.price }}</h4>
+        {{ oneDessert.description|raw }}
+        {% for message in app.flashes('notice') %}
+            <div class="flash-notice">
+                {{ message }}
+            </div>
+        {% endfor %}
         {% if app.user %}
             <div class="row">
                 <div class="col-sm-12">

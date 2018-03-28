@@ -169,17 +169,33 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'Ichinator\\CommandBundle\\Controller\\DefaultController::indexAction',  '_route' => 'ichinator_command_homepage',);
         }
 
-        // ichinator_burger
-        if ('/burger' === $pathinfo) {
-            return array (  '_controller' => 'Ichinator\\CommandBundle\\Controller\\FoodController::burgerAction',  '_route' => 'ichinator_burger',);
+        if (0 === strpos($pathinfo, '/burger')) {
+            // ichinator_burger
+            if ('/burger' === $pathinfo) {
+                return array (  '_controller' => 'Ichinator\\CommandBundle\\Controller\\FoodController::burgerAction',  '_route' => 'ichinator_burger',);
+            }
+
+            // oneBurgerRoute
+            if (preg_match('#^/burger/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'oneBurgerRoute')), array (  '_controller' => 'Ichinator\\CommandBundle\\Controller\\FoodController::oneBurgerAction',));
+            }
+
         }
 
-        // ichinator_plat
-        if ('/plat' === $pathinfo) {
-            return array (  '_controller' => 'Ichinator\\CommandBundle\\Controller\\FoodController::platAction',  '_route' => 'ichinator_plat',);
+        elseif (0 === strpos($pathinfo, '/plat')) {
+            // ichinator_plat
+            if ('/plat' === $pathinfo) {
+                return array (  '_controller' => 'Ichinator\\CommandBundle\\Controller\\FoodController::platAction',  '_route' => 'ichinator_plat',);
+            }
+
+            // onePlatRoute
+            if (preg_match('#^/plat/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'onePlatRoute')), array (  '_controller' => 'Ichinator\\CommandBundle\\Controller\\FoodController::onePlatAction',));
+            }
+
         }
 
-        if (0 === strpos($pathinfo, '/profile')) {
+        elseif (0 === strpos($pathinfo, '/profile')) {
             // fos_user_profile_show
             if ('/profile' === $trimmedPathinfo) {
                 if ('GET' !== $canonicalMethod) {
@@ -219,9 +235,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // ichinator_dessert
-        if ('/dessert' === $pathinfo) {
-            return array (  '_controller' => 'Ichinator\\CommandBundle\\Controller\\FoodController::dessertAction',  '_route' => 'ichinator_dessert',);
+        elseif (0 === strpos($pathinfo, '/dessert')) {
+            // ichinator_dessert
+            if ('/dessert' === $pathinfo) {
+                return array (  '_controller' => 'Ichinator\\CommandBundle\\Controller\\FoodController::dessertAction',  '_route' => 'ichinator_dessert',);
+            }
+
+            // oneDessertRoute
+            if (preg_match('#^/dessert/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'oneDessertRoute')), array (  '_controller' => 'Ichinator\\CommandBundle\\Controller\\FoodController::oneDessertAction',));
+            }
+
         }
 
         // homepage

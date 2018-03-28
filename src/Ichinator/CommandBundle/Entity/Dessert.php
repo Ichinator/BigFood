@@ -58,6 +58,12 @@ class Dessert
     private $imageFile;
 
     /**
+     * @ORM\OneToMany(targetEntity="Ichinator\NewsBundle\Entity\Comments", mappedBy="dessert")
+     */
+
+    private $comments;
+
+    /**
      * @ORM\Column(type="datetime")
      * @var \DateTime
      */
@@ -202,5 +208,46 @@ class Dessert
     public function __toString()
     {
         return $this->name;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add comment
+     *
+     * @param \Ichinator\NewsBundle\Entity\Comments $comment
+     *
+     * @return Dessert
+     */
+    public function addComment(\Ichinator\NewsBundle\Entity\Comments $comment)
+    {
+        $this->comments[] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Remove comment
+     *
+     * @param \Ichinator\NewsBundle\Entity\Comments $comment
+     */
+    public function removeComment(\Ichinator\NewsBundle\Entity\Comments $comment)
+    {
+        $this->comments->removeElement($comment);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 }

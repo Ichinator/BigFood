@@ -3,6 +3,7 @@
 namespace Ichinator\NewsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Comments
@@ -31,8 +32,27 @@ class Comments
     /**
      * @ORM\ManyToOne(targetEntity="News", inversedBy="comments")
      * @ORM\JoinColumn(name="news_id", referencedColumnName="id")
+     * @Assert\NotBlank(message="Votre commentaire est vide ! Il ne sera pas enregistré !")
      */
     private $news;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Ichinator\CommandBundle\Entity\Burger", inversedBy="comments")
+     * @ORM\JoinColumn(name="burger_id", referencedColumnName="id")
+     */
+    private $burger;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Ichinator\CommandBundle\Entity\Plat", inversedBy="comments")
+     * @ORM\JoinColumn(name="plat_id", referencedColumnName="id")
+     */
+    private $plat;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Ichinator\CommandBundle\Entity\Dessert", inversedBy="comments")
+     * @ORM\JoinColumn(name="dessert_id", referencedColumnName="id")
+     */
+    private $dessert;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="comments")
@@ -79,6 +99,55 @@ class Comments
         return $this->getContent();
     }
 
+
+    /**
+     * Set user
+     *
+     * @param \AppBundle\Entity\User $user
+     *
+     * @return Comments
+     */
+    public function setUser(\AppBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \AppBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set burger
+     *
+     * @param \Ichinator\CommandBundle\Entity\Burger $burger
+     *
+     * @return Comments
+     */
+    public function setBurger(\Ichinator\CommandBundle\Entity\Burger $burger = null)
+    {
+        $this->burger = $burger;
+
+        return $this;
+    }
+
+    /**
+     * Get burger
+     *
+     * @return \Ichinator\CommandBundle\Entity\Burger
+     */
+    public function getBurger()
+    {
+        return $this->burger;
+    }
+
     /**
      * Set news
      *
@@ -104,26 +173,50 @@ class Comments
     }
 
     /**
-     * Set user
+     * Set plat
      *
-     * @param \AppBundle\Entity\User $user
+     * @param \Ichinator\CommandBundle\Entity\Plat $plat
      *
      * @return Comments
      */
-    public function setUser(\AppBundle\Entity\User $user = null)
+    public function setPlat(\Ichinator\CommandBundle\Entity\Plat $plat = null)
     {
-        $this->user = $user;
+        $this->plat = $plat;
 
         return $this;
     }
 
     /**
-     * Get user
+     * Get plat
      *
-     * @return \AppBundle\Entity\User
+     * @return \Ichinator\CommandBundle\Entity\Plat
      */
-    public function getUser()
+    public function getPlat()
     {
-        return $this->user;
+        return $this->plat;
+    }
+
+    /**
+     * Set dessert
+     *
+     * @param \Ichinator\CommandBundle\Entity\Dessert $dessert
+     *
+     * @return Comments
+     */
+    public function setDessert(\Ichinator\CommandBundle\Entity\Dessert $dessert = null)
+    {
+        $this->dessert = $dessert;
+
+        return $this;
+    }
+
+    /**
+     * Get dessert
+     *
+     * @return \Ichinator\CommandBundle\Entity\Dessert
+     */
+    public function getDessert()
+    {
+        return $this->dessert;
     }
 }

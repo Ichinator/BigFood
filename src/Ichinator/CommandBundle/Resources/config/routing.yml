@@ -13,3 +13,21 @@ ichinator_plat:
 ichinator_dessert:
     path:     /dessert
     defaults: { _controller: IchinatorCommandBundle:Food:dessert }
+
+oneBurgerRoute:
+    path:      /burger/{id}
+    defaults:  { _controller: IchinatorCommandBundle:Food:oneBurger }
+    requirements:
+        page: '\d+'
+
+onePlatRoute:
+    path:      /plat/{id}
+    defaults:  { _controller: IchinatorCommandBundle:Food:onePlat }
+    requirements:
+        page: '\d+'
+
+oneDessertRoute:
+    path:      /dessert/{id}
+    defaults:  { _controller: IchinatorCommandBundle:Food:oneDessert }
+    requirements:
+        page: '\d+'

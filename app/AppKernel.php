@@ -23,6 +23,8 @@ class AppKernel extends Kernel
             new Ichinator\ContactBundle\IchinatorContactBundle(),
             new Ichinator\NewsBundle\IchinatorNewsBundle(),
             new KMS\FroalaEditorBundle\KMSFroalaEditorBundle(),
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

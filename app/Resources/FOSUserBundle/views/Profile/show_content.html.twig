@@ -1,9 +1,10 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 <div class="fos_user_user_show">
+    <p>Voici vos données :</p>
     <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
     <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
     {% if is_granted('ROLE_ADMIN') -%}
-        <p>Vous pouvez vous rediriger vers <a href="{{ path('easyadmin') }}">l'interface d'administration</a> ou bien <a href="#">créer une news</a></p>
+        <p>Vous pouvez vous rediriger vers <a href="{{ path('easyadmin') }}">l'interface d'administration</a> ou bien <a href="{{ path('ichinator_news_homepage') }}">créer une news</a></p>
     {% endif %}
 </div>

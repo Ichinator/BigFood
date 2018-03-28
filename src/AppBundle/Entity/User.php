@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -32,27 +33,27 @@ class User extends BaseUser
     }
 
     /**
-     * Add comment
+     * Add comments
      *
-     * @param \Ichinator\NewsBundle\Comments $comment
+     * @param \Ichinator\NewsBundle\Entity\Comments $comments
      *
      * @return User
      */
-    public function addComment(\Ichinator\NewsBundle\Comments $comment)
+    public function addComments(\Ichinator\NewsBundle\Entity\Comments $comments)
     {
-        $this->comments[] = $comment;
+        $this->comments[] = $comments;
 
         return $this;
     }
 
     /**
-     * Remove comment
+     * Remove comments
      *
-     * @param \Ichinator\NewsBundle\Comments $comment
+     * @param \Ichinator\NewsBundle\Entity\Comments $comments
      */
-    public function removeComment(\Ichinator\NewsBundle\Comments $comment)
+    public function removeComments(\Ichinator\NewsBundle\Entity\Comments $comments)
     {
-        $this->comments->removeElement($comment);
+        $this->comments->removeElement($comments);
     }
 
     /**

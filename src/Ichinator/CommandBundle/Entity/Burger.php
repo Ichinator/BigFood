@@ -63,6 +63,14 @@ class Burger
      */
     private $updatedAt;
 
+
+    /**
+     * @ORM\OneToMany(targetEntity="Ichinator\NewsBundle\Entity\Comments", mappedBy="burger")
+     */
+
+    private $comments;
+
+
     /**
      * Get id
      *
@@ -200,5 +208,46 @@ class Burger
     public function __toString()
     {
         return $this->name;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add comment
+     *
+     * @param \Ichinator\NewsBundle\Entity\Comments $comment
+     *
+     * @return Burger
+     */
+    public function addComment(\Ichinator\NewsBundle\Entity\Comments $comment)
+    {
+        $this->comments[] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Remove comment
+     *
+     * @param \Ichinator\NewsBundle\Entity\Comments $comment
+     */
+    public function removeComment(\Ichinator\NewsBundle\Entity\Comments $comment)
+    {
+        $this->comments->removeElement($comment);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 }

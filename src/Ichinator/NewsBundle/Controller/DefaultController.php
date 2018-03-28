@@ -85,7 +85,7 @@ class DefaultController extends Controller
             $em->flush();
         }
 
-        $comments = $this->getDoctrine()->getRepository(Comments::class)->findComments($id);
+        $comments = $this->getDoctrine()->getRepository(Comments::class)->findNewsComments($id);
         return $this->render('IchinatorNewsBundle:Default:oneNews.html.twig', array('oneNews'=>$oneNews, 'form' => $formView, 'comments' => $comments));
     }
 }

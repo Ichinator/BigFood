@@ -5,11 +5,15 @@
     {% for dessert in dessert %}
 
             <div class="card" style="width:400px">
+                <div class="card-header">
+                    <h4 class="card-title">{{ dessert.name }} {{ dessert.price }} €</h4>
+                </div>
                 <div class="card-body">
-                    <h4 class="card-title">{{ dessert.name }}</h4>
-                    <p class="card-text">{{ dessert.price }} €</p>
                     <img src="{{ vich_uploader_asset(dessert, 'imageFile') }}" alt="{{ dessert.image }}" />
                     <p class="card-text">{{ dessert.description }} €</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{{ path('oneDessertRoute', { 'id': dessert.id }) }}" class="btn btn-primary">Voir le dessert</a>
                 </div>
             </div>
 

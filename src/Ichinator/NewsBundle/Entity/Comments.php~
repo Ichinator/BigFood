@@ -35,6 +35,24 @@ class Comments
     private $news;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Ichinator\CommandBundle\Entity\Burger", inversedBy="comments")
+     * @ORM\JoinColumn(name="burger_id", referencedColumnName="id")
+     */
+    private $burger;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Ichinator\CommandBundle\Entity\Plat", inversedBy="comments")
+     * @ORM\JoinColumn(name="plat_id", referencedColumnName="id")
+     */
+    private $plat;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Ichinator\CommandBundle\Entity\Dessert", inversedBy="comments")
+     * @ORM\JoinColumn(name="dessert_id", referencedColumnName="id")
+     */
+    private $dessert;
+
+    /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="comments")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
@@ -79,6 +97,55 @@ class Comments
         return $this->getContent();
     }
 
+
+    /**
+     * Set user
+     *
+     * @param \AppBundle\Entity\User $user
+     *
+     * @return Comments
+     */
+    public function setUser(\AppBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \AppBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set burger
+     *
+     * @param \Ichinator\CommandBundle\Entity\Burger $burger
+     *
+     * @return Comments
+     */
+    public function setBurger(\Ichinator\CommandBundle\Entity\Burger $burger = null)
+    {
+        $this->burger = $burger;
+
+        return $this;
+    }
+
+    /**
+     * Get burger
+     *
+     * @return \Ichinator\CommandBundle\Entity\Burger
+     */
+    public function getBurger()
+    {
+        return $this->burger;
+    }
+
     /**
      * Set news
      *
@@ -101,5 +168,29 @@ class Comments
     public function getNews()
     {
         return $this->news;
+    }
+
+    /**
+     * Set plat
+     *
+     * @param \Ichinator\CommandBundle\Entity\Plat $plat
+     *
+     * @return Comments
+     */
+    public function setPlat(\Ichinator\CommandBundle\Entity\Plat $plat = null)
+    {
+        $this->plat = $plat;
+
+        return $this;
+    }
+
+    /**
+     * Get plat
+     *
+     * @return \Ichinator\CommandBundle\Entity\Plat
+     */
+    public function getPlat()
+    {
+        return $this->plat;
     }
 }
