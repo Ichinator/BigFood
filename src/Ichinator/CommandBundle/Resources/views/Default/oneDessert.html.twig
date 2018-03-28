@@ -10,12 +10,17 @@
             <img src="{{ vich_uploader_asset(oneDessert, 'imageFile') }}" alt="{{ oneDessert.image }}"
                  class="center-block"/>
         </div>
-
+        <h4>Prix: {{ oneDessert.price }}</h4>
         {{ oneDessert.description|raw }}
+        {% for message in app.flashes('notice') %}
+            <div class="flash-notice">
+                {{ message }}
+            </div>
+        {% endfor %}
         {% if app.user %}
             <div class="row">
                 <div class="col-sm-12">
-                    {{ form_start(form) }}
+                    {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
                     {{ form_widget(form) }}
                     {{ form_end(form) }}
                 </div>

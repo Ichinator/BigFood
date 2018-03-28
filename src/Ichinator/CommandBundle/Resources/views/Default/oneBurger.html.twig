@@ -11,12 +11,19 @@
             <img src="{{ vich_uploader_asset(oneBurger, 'imageFile') }}" alt="{{ oneBurger.image }}"
                  class="center-block"/>
         </div>
-
+        <h4>Prix: {{ oneBurger.price }}</h4>
+        <h4>Description: </h4>
         {{ oneBurger.description|raw }}
+
+        {% for message in app.flashes('notice') %}
+            <div class="flash-notice">
+                {{ message }}
+            </div>
+        {% endfor %}
         {% if app.user %}
             <div class="row">
                 <div class="col-sm-12">
-                    {{ form_start(form) }}
+                    {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
                     {{ form_widget(form) }}
                     {{ form_end(form) }}
                 </div>

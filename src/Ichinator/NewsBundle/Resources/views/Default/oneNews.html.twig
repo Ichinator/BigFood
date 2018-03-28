@@ -16,7 +16,7 @@
         {% if app.user %}
             <div class="row">
                 <div class="col-sm-12">
-                    {{ form_start(form) }}
+                    {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
                     {{ form_widget(form) }}
                     {{ form_end(form) }}
                 </div>

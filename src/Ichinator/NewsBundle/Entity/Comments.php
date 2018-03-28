@@ -3,6 +3,7 @@
 namespace Ichinator\NewsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Comments
@@ -31,6 +32,7 @@ class Comments
     /**
      * @ORM\ManyToOne(targetEntity="News", inversedBy="comments")
      * @ORM\JoinColumn(name="news_id", referencedColumnName="id")
+     * @Assert\NotBlank(message="Votre commentaire est vide ! Il ne sera pas enregistré !")
      */
     private $news;
 

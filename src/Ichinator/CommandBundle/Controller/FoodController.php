@@ -64,6 +64,10 @@ class FoodController extends Controller
             $em->persist($burger);
             $em->persist($comments);
             $em->flush();
+            $this->addFlash(
+                'notice',
+                'Commentaire enregistré !'
+            );
         }
 
         $comments = $this->getDoctrine()->getRepository(Comments::class)->findBurgerComments($id);
@@ -94,6 +98,10 @@ class FoodController extends Controller
             $em->persist($plat);
             $em->persist($comments);
             $em->flush();
+            $this->addFlash(
+                'notice',
+                'Commentaire enregistré !'
+            );
         }
 
         $comments = $this->getDoctrine()->getRepository(Comments::class)->findPlatComments($id);
@@ -123,6 +131,10 @@ class FoodController extends Controller
             $em->persist($dessert);
             $em->persist($comments);
             $em->flush();
+            $this->addFlash(
+                'notice',
+                'Commentaire enregistré !'
+            );
         }
 
         $comments = $this->getDoctrine()->getRepository(Comments::class)->findDessertComments($id);

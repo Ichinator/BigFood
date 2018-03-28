@@ -45,7 +45,7 @@ class CommandType extends AbstractType
                 'placeholder' => array(
                     'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour', 'hour' => 'Heure', 'minute' => 'Minute'
                 )))
-            ->add('submit', SubmitType::class)
+            ->add('submit', SubmitType::class, array('label' => 'Commander'))
         ;
     }/**
      * {@inheritdoc}

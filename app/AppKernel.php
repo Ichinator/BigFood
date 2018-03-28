@@ -23,7 +23,7 @@ class AppKernel extends Kernel
             new Ichinator\ContactBundle\IchinatorContactBundle(),
             new Ichinator\NewsBundle\IchinatorNewsBundle(),
             new KMS\FroalaEditorBundle\KMSFroalaEditorBundle(),
-            new CoreSphere\ConsoleBundle\CoreSphereConsoleBundle(),
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
 
         ];
 
@@ -35,7 +35,7 @@ class AppKernel extends Kernel
             if ('dev' === $this->getEnvironment()) {
                 $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
                 $bundles[] = new Symfony\Bundle\WebServerBundle\WebServerBundle();
-                $bundles[] = new Ivory\CKEditorBundle\IvoryCKEditorBundle();
+                $bundles[] = new CoreSphere\ConsoleBundle\CoreSphereConsoleBundle();
             }
         }
 

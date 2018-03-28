@@ -24,13 +24,13 @@
       <parameter key="IchinatorContactBundle">Ichinator\ContactBundle\IchinatorContactBundle</parameter>
       <parameter key="IchinatorNewsBundle">Ichinator\NewsBundle\IchinatorNewsBundle</parameter>
       <parameter key="KMSFroalaEditorBundle">KMS\FroalaEditorBundle\KMSFroalaEditorBundle</parameter>
-      <parameter key="CoreSphereConsoleBundle">CoreSphere\ConsoleBundle\CoreSphereConsoleBundle</parameter>
+      <parameter key="IvoryCKEditorBundle">Ivory\CKEditorBundle\IvoryCKEditorBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
       <parameter key="SensioGeneratorBundle">Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle</parameter>
       <parameter key="WebServerBundle">Symfony\Bundle\WebServerBundle\WebServerBundle</parameter>
-      <parameter key="IvoryCKEditorBundle">Ivory\CKEditorBundle\IvoryCKEditorBundle</parameter>
+      <parameter key="CoreSphereConsoleBundle">CoreSphere\ConsoleBundle\CoreSphereConsoleBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -108,10 +108,10 @@
         <parameter key="path">/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/kms/froala-editor-bundle</parameter>
         <parameter key="namespace">KMS\FroalaEditorBundle</parameter>
       </parameter>
-      <parameter key="CoreSphereConsoleBundle" type="collection">
+      <parameter key="IvoryCKEditorBundle" type="collection">
         <parameter key="parent">null</parameter>
-        <parameter key="path">/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/coresphere/console-bundle</parameter>
-        <parameter key="namespace">CoreSphere\ConsoleBundle</parameter>
+        <parameter key="path">/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/egeloen/ckeditor-bundle</parameter>
+        <parameter key="namespace">Ivory\CKEditorBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -138,10 +138,10 @@
         <parameter key="path">/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/symfony/symfony/src/Symfony/Bundle/WebServerBundle</parameter>
         <parameter key="namespace">Symfony\Bundle\WebServerBundle</parameter>
       </parameter>
-      <parameter key="IvoryCKEditorBundle" type="collection">
+      <parameter key="CoreSphereConsoleBundle" type="collection">
         <parameter key="parent">null</parameter>
-        <parameter key="path">/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/egeloen/ckeditor-bundle</parameter>
-        <parameter key="namespace">Ivory\CKEditorBundle</parameter>
+        <parameter key="path">/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/coresphere/console-bundle</parameter>
+        <parameter key="namespace">CoreSphere\ConsoleBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -1035,7 +1035,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>AhP8EwUn1v0prUt0VQJMkv</argument>
+      <argument>WiOv5sIE98WYmq8pfOnFTB</argument>
       <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1045,7 +1045,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>AhP8EwUn1v0prUt0VQJMkv</argument>
+      <argument>WiOv5sIE98WYmq8pfOnFTB</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -3640,12 +3640,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>5ab7d65ed3fa29.46127707</argument>
+      <argument>5abb843e67a913.65320532</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>5ab7d65ed3fa29.46127707</argument>
+      <argument>5abb843e67a913.65320532</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -3778,13 +3778,13 @@
         <argument type="service" id="kms_froala_editor.froala_extension"/>
       </call>
       <call method="addExtension">
+        <argument type="service" id="ivory_ck_editor.twig_extension"/>
+      </call>
+      <call method="addExtension">
         <argument type="service" id="twig.extension.dump"/>
       </call>
       <call method="addExtension">
         <argument type="service" id="twig.extension.webprofiler"/>
-      </call>
-      <call method="addExtension">
-        <argument type="service" id="ivory_ck_editor.twig_extension"/>
       </call>
       <call method="addGlobal">
         <argument>app</argument>
@@ -3887,8 +3887,8 @@
         <argument>KMSFroalaEditor</argument>
       </call>
       <call method="addPath">
-        <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/coresphere/console-bundle/Resources/views</argument>
-        <argument>CoreSphereConsole</argument>
+        <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/egeloen/ckeditor-bundle/Resources/views</argument>
+        <argument>IvoryCKEditor</argument>
       </call>
       <call method="addPath">
         <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
@@ -3899,8 +3899,8 @@
         <argument>WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/egeloen/ckeditor-bundle/Resources/views</argument>
-        <argument>IvoryCKEditor</argument>
+        <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/coresphere/console-bundle/Resources/views</argument>
+        <argument>CoreSphereConsole</argument>
       </call>
       <call method="addPath">
         <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/app/Resources/views</argument>
@@ -4071,8 +4071,8 @@
         <argument>KMSFroalaEditor</argument>
       </call>
       <call method="addPath">
-        <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/coresphere/console-bundle/Resources/views</argument>
-        <argument>CoreSphereConsole</argument>
+        <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/egeloen/ckeditor-bundle/Resources/views</argument>
+        <argument>IvoryCKEditor</argument>
       </call>
       <call method="addPath">
         <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
@@ -4083,8 +4083,8 @@
         <argument>WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/egeloen/ckeditor-bundle/Resources/views</argument>
-        <argument>IvoryCKEditor</argument>
+        <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/vendor/coresphere/console-bundle/Resources/views</argument>
+        <argument>CoreSphereConsole</argument>
       </call>
       <call method="addPath">
         <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/app/Resources/views</argument>
@@ -5676,26 +5676,23 @@
       <tag name="twig.extension"/>
       <argument type="service" id="service_container"/>
     </service>
-    <service id="coresphere_console.controller" class="CoreSphere\ConsoleBundle\Controller\ConsoleController">
-      <argument type="service" id="templating.engine.twig"/>
-      <argument type="service" id="coresphere_console.executer"/>
-      <argument type="service" id="coresphere_console.application"/>
-      <argument>dev</argument>
+    <service id="ivory_ck_editor.form.type" class="Ivory\CKEditorBundle\Form\Type\CKEditorType">
+      <tag name="form.type"/>
+      <argument type="service" id="ivory_ck_editor.config_manager"/>
+      <argument type="service" id="ivory_ck_editor.plugin_manager"/>
+      <argument type="service" id="ivory_ck_editor.styles_set_manager"/>
+      <argument type="service" id="ivory_ck_editor.template_manager"/>
     </service>
-    <service id="coresphere_console.executer" class="CoreSphere\ConsoleBundle\Executer\CommandExecuter">
-      <argument type="service" id="kernel"/>
+    <service id="ivory_ck_editor.config_manager" class="Ivory\CKEditorBundle\Model\ConfigManager"/>
+    <service id="ivory_ck_editor.plugin_manager" class="Ivory\CKEditorBundle\Model\PluginManager"/>
+    <service id="ivory_ck_editor.styles_set_manager" class="Ivory\CKEditorBundle\Model\StylesSetManager"/>
+    <service id="ivory_ck_editor.template_manager" class="Ivory\CKEditorBundle\Model\TemplateManager"/>
+    <service id="ivory_ck_editor.renderer" class="Ivory\CKEditorBundle\Renderer\CKEditorRenderer">
+      <argument type="service" id="service_container"/>
     </service>
-    <service id="coresphere_console.routing" class="CoreSphere\ConsoleBundle\Routing\Loader">
-      <tag name="routing.loader"/>
-      <argument type="service" id="routing.loader.yml"/>
-    </service>
-    <service id="coresphere_console.toolbar" class="CoreSphere\ConsoleBundle\DataCollector\DataCollector">
-      <tag name="data_collector" template="CoreSphereConsoleBundle:Toolbar:toolbar" id="coresphere_console"/>
-    </service>
-    <service id="coresphere_console.application.factory" class="CoreSphere\ConsoleBundle\Console\ApplicationFactory"/>
-    <service id="coresphere_console.application" class="Symfony\Bundle\FrameworkBundle\Console\Application">
-      <argument type="service" id="kernel"/>
-      <factory service="coresphere_console.application.factory" method="create"/>
+    <service id="ivory_ck_editor.twig_extension" class="Ivory\CKEditorBundle\Twig\CKEditorExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="ivory_ck_editor.renderer"/>
     </service>
     <service id="twig.extension.dump" class="Symfony\Bridge\Twig\Extension\DumpExtension" public="false">
       <tag name="twig.extension"/>
@@ -5884,29 +5881,26 @@
     <service id="web_server.command.server_status" class="Symfony\Bundle\WebServerBundle\Command\ServerStatusCommand" public="false">
       <tag name="console.command"/>
     </service>
-    <service id="ivory_ck_editor.form.type" class="Ivory\CKEditorBundle\Form\Type\CKEditorType">
-      <tag name="form.type"/>
-      <argument type="service" id="ivory_ck_editor.config_manager"/>
-      <argument type="service" id="ivory_ck_editor.plugin_manager"/>
-      <argument type="service" id="ivory_ck_editor.styles_set_manager"/>
-      <argument type="service" id="ivory_ck_editor.template_manager"/>
-      <call method="setFilebrowsers">
-        <argument type="collection">
-          <argument>VideoBrowse</argument>
-          <argument>VideoUpload</argument>
-        </argument>
-      </call>
+    <service id="coresphere_console.controller" class="CoreSphere\ConsoleBundle\Controller\ConsoleController">
+      <argument type="service" id="templating.engine.twig"/>
+      <argument type="service" id="coresphere_console.executer"/>
+      <argument type="service" id="coresphere_console.application"/>
+      <argument>dev</argument>
     </service>
-    <service id="ivory_ck_editor.config_manager" class="Ivory\CKEditorBundle\Model\ConfigManager"/>
-    <service id="ivory_ck_editor.plugin_manager" class="Ivory\CKEditorBundle\Model\PluginManager"/>
-    <service id="ivory_ck_editor.styles_set_manager" class="Ivory\CKEditorBundle\Model\StylesSetManager"/>
-    <service id="ivory_ck_editor.template_manager" class="Ivory\CKEditorBundle\Model\TemplateManager"/>
-    <service id="ivory_ck_editor.renderer" class="Ivory\CKEditorBundle\Renderer\CKEditorRenderer">
-      <argument type="service" id="service_container"/>
+    <service id="coresphere_console.executer" class="CoreSphere\ConsoleBundle\Executer\CommandExecuter">
+      <argument type="service" id="kernel"/>
     </service>
-    <service id="ivory_ck_editor.twig_extension" class="Ivory\CKEditorBundle\Twig\CKEditorExtension">
-      <tag name="twig.extension"/>
-      <argument type="service" id="ivory_ck_editor.renderer"/>
+    <service id="coresphere_console.routing" class="CoreSphere\ConsoleBundle\Routing\Loader">
+      <tag name="routing.loader"/>
+      <argument type="service" id="routing.loader.yml"/>
+    </service>
+    <service id="coresphere_console.toolbar" class="CoreSphere\ConsoleBundle\DataCollector\DataCollector">
+      <tag name="data_collector" template="CoreSphereConsoleBundle:Toolbar:toolbar" id="coresphere_console"/>
+    </service>
+    <service id="coresphere_console.application.factory" class="CoreSphere\ConsoleBundle\Console\ApplicationFactory"/>
+    <service id="coresphere_console.application" class="Symfony\Bundle\FrameworkBundle\Console\Application">
+      <argument type="service" id="kernel"/>
+      <factory service="coresphere_console.application.factory" method="create"/>
     </service>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6158,7 +6152,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>FOh9nYA+jr</argument>
       <argument>0</argument>
-      <argument>AhP8EwUn1v0prUt0VQJMkv</argument>
+      <argument>WiOv5sIE98WYmq8pfOnFTB</argument>
       <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -6166,7 +6160,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>HK5kVLuG4R</argument>
       <argument>0</argument>
-      <argument>AhP8EwUn1v0prUt0VQJMkv</argument>
+      <argument>WiOv5sIE98WYmq8pfOnFTB</argument>
       <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -6174,7 +6168,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>4qm58Y9Ern</argument>
       <argument>0</argument>
-      <argument>AhP8EwUn1v0prUt0VQJMkv</argument>
+      <argument>WiOv5sIE98WYmq8pfOnFTB</argument>
       <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -6182,7 +6176,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>6o6u32MTZb</argument>
       <argument>0</argument>
-      <argument>AhP8EwUn1v0prUt0VQJMkv</argument>
+      <argument>WiOv5sIE98WYmq8pfOnFTB</argument>
       <argument>/home/ichinator/Bureau/MesProjetsGIT/BigFood/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
