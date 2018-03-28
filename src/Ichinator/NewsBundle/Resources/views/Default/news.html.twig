@@ -3,7 +3,7 @@
     {{ parent() }}
     <div class="row">
         <div class="col-sm-8">
-            {{ form_start(form) }}
+            {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
             {{ form_widget(form) }}
             {{ form_end(form) }}
         </div>
