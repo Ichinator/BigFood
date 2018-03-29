@@ -394,37 +394,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        elseif (0 === strpos($pathinfo, '/froalaeditor')) {
-            if (0 === strpos($pathinfo, '/froalaeditor/upload_')) {
-                // kms_froala_editor_upload_image
-                if ('/froalaeditor/upload_image' === $pathinfo) {
-                    return array (  '_controller' => 'KMS\\FroalaEditorBundle\\Controller\\MediaController::uploadImageAction',  '_route' => 'kms_froala_editor_upload_image',);
-                }
-
-                // kms_froala_editor_upload_file
-                if ('/froalaeditor/upload_file' === $pathinfo) {
-                    return array (  '_controller' => 'KMS\\FroalaEditorBundle\\Controller\\MediaController::uploadFileAction',  '_route' => 'kms_froala_editor_upload_file',);
-                }
-
-                // kms_froala_editor_upload_video
-                if ('/froalaeditor/upload_video' === $pathinfo) {
-                    return array (  '_controller' => 'KMS\\FroalaEditorBundle\\Controller\\MediaController::uploadVideoAction',  '_route' => 'kms_froala_editor_upload_video',);
-                }
-
-            }
-
-            // kms_froala_editor_delete_image
-            if ('/froalaeditor/delete_image' === $pathinfo) {
-                return array (  '_controller' => 'KMS\\FroalaEditorBundle\\Controller\\MediaController::deleteImageAction',  '_route' => 'kms_froala_editor_delete_image',);
-            }
-
-            // kms_froala_editor_load_images
-            if ('/froalaeditor/load_images' === $pathinfo) {
-                return array (  '_controller' => 'KMS\\FroalaEditorBundle\\Controller\\MediaController::loadImagesAction',  '_route' => 'kms_froala_editor_load_images',);
-            }
-
-        }
-
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }
