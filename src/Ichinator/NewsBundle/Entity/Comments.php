@@ -32,7 +32,6 @@ class Comments
     /**
      * @ORM\ManyToOne(targetEntity="News", inversedBy="comments")
      * @ORM\JoinColumn(name="news_id", referencedColumnName="id")
-     * @Assert\NotBlank(message="Votre commentaire est vide ! Il ne sera pas enregistré !")
      */
     private $news;
 

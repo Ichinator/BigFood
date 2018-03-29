@@ -21,28 +21,35 @@ class DefaultController extends Controller
             $telephoneNumber = $form["telephoneNumber"]->getData();
             $message = $form["message"]->getData();
 
-            $em = $this->getDoctrine()->getManager();
+            $chaineConcat = $name.$mailAdress.$message.$telephoneNumber;
+            $chaineConcatVerifie = strpos($chaineConcat, "</");
 
-            $contactMessage = new contactMessage();
-            $contactMessage->setName($name);
-            $contactMessage->setMailAdress($mailAdress);
-            $contactMessage->setTelephoneNumber($telephoneNumber);
-            $contactMessage->setMessage($message);
+            if ($chaineConcatVerifie !== false || empty($contenu)){
+                $this->addFlash("notice", "Votre message contient des caractères inappropriés ou est vide !");
+            }else {
 
-            $em->persist($contactMessage);
-            $em->flush();
+                $em = $this->getDoctrine()->getManager();
 
-            $messageToUser = \Swift_Message::newInstance()
+                $contactMessage = new contactMessage();
+                $contactMessage->setName($name);
+                $contactMessage->setMailAdress($mailAdress);
+                $contactMessage->setTelephoneNumber($telephoneNumber);
+                $contactMessage->setMessage($message);
 
-                ->setSubject("BigFood a reçu votre message")
-                ->setFrom('lazonegeek1@gmail.com')
-                ->setTo($mailAdress)
-                ->setBody($this->renderView('default/messageToUser.html.twig',array('message' => $message, 'name' => $name)),'text/html');
-            $this->get('mailer')->send($messageToUser);
+                $em->persist($contactMessage);
+                $em->flush();
+
+                $messageToUser = \Swift_Message::newInstance()
+                    ->setSubject("BigFood a reçu votre message")
+                    ->setFrom('lazonegeek1@gmail.com')
+                    ->setTo($mailAdress)
+                    ->setBody($this->renderView('default/messageToUser.html.twig', array('message' => $message, 'name' => $name)), 'text/html');
+                $this->get('mailer')->send($messageToUser);
 
 
-            $this->addFlash('success', 'Votre message a bien été enregistré, nous vous contacterons bientôt !');
-            return $this->redirectToRoute('homepage');
+                $this->addFlash('success', 'Votre message a bien été enregistré, nous vous contacterons bientôt !');
+                return $this->redirectToRoute('homepage');
+            }
         }
         return $this->render('IchinatorContactBundle:Default:index.html.twig', array('form' => $formView));
 

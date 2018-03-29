@@ -61,10 +61,6 @@ class ComposerStaticInitfbdfe5f358c22a63d896f981079717c4
         array (
             'Monolog\\' => 8,
         ),
-        'K' => 
-        array (
-            'KMS\\FroalaEditorBundle\\' => 23,
-        ),
         'J' => 
         array (
             'JavierEguiluz\\Bundle\\EasyAdminBundle\\' => 37,
@@ -79,7 +75,6 @@ class ComposerStaticInitfbdfe5f358c22a63d896f981079717c4
         array (
             'Fig\\Link\\' => 9,
             'FOS\\UserBundle\\' => 15,
-            'FM\\SummernoteBundle\\' => 20,
         ),
         'E' => 
         array (
@@ -209,10 +204,6 @@ class ComposerStaticInitfbdfe5f358c22a63d896f981079717c4
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
-        'KMS\\FroalaEditorBundle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/kms/froala-editor-bundle',
-        ),
         'JavierEguiluz\\Bundle\\EasyAdminBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/javiereguiluz/easyadmin-bundle/legacy',
@@ -236,10 +227,6 @@ class ComposerStaticInitfbdfe5f358c22a63d896f981079717c4
         'FOS\\UserBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/friendsofsymfony/user-bundle',
-        ),
-        'FM\\SummernoteBundle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/helios-ag/fm-summernote-bundle',
         ),
         'EasyCorp\\Bundle\\EasyAdminBundle\\' => 
         array (
@@ -300,10 +287,6 @@ class ComposerStaticInitfbdfe5f358c22a63d896f981079717c4
         ),
         'P' => 
         array (
-            'Pepsit36\\SummernoteBundle' => 
-            array (
-                0 => __DIR__ . '/..' . '/pepsit36/summernotebundle',
-            ),
             'Pagerfanta\\' => 
             array (
                 0 => __DIR__ . '/..' . '/pagerfanta/pagerfanta/src',
