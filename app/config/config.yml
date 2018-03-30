@@ -175,9 +175,5 @@ vich_uploader:
                     upload_destination: '%kernel.root_dir%/../web/uploads/images/news'
                     namer: vich_uploader.namer_uniqid
 
-kms_froala_editor:
-    language: "fr"
-    saveURL: "ichinator_news_homepage"
-    saveInterval: 2500
-    saveParam: "content"
+
 

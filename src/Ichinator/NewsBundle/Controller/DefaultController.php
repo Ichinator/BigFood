@@ -66,23 +66,31 @@ class DefaultController extends Controller
         $oneNews = $this->getDoctrine()->getManager()->getRepository(News::class)->find($id);
 
         if($form->isSubmitted() && $form->isValid()){
-            $comments->setContent($form["content"]->getData());
+            $contenu = $form["content"]->getData();
+            $contenuVerifie = strpos($contenu, "</");
+            if ($contenuVerifie !== false || empty($contenu)){
+                $this->addFlash("notice", "Votre message n a pas été enregistré car il est vide ou contient des caractères interdits");
+            }
+            else{
+                $comments->setContent($contenu);
 
-            $news = new News();
-            $news = $this->getDoctrine()->getRepository(News::class)->find($id);
+                $news = new News();
+                $news = $this->getDoctrine()->getRepository(News::class)->find($id);
 
-            //$user = new User();
-            $user = $this->getUser();
-            //$user = $this->get('security.token_storage')->getToken()->getUser();
-            // relates this product to the category
-            $comments->setNews($news);
-            $comments->setUser($user);
+                //$user = new User();
+                $user = $this->getUser();
+                //$user = $this->get('security.token_storage')->getToken()->getUser();
+                // relates this product to the category
+                $comments->setNews($news);
+                $comments->setUser($user);
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($user);
-            $em->persist($news);
-            $em->persist($comments);
-            $em->flush();
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($user);
+                $em->persist($news);
+                $em->persist($comments);
+                $em->flush();
+
+            }
         }
 
         $comments = $this->getDoctrine()->getRepository(Comments::class)->findNewsComments($id);

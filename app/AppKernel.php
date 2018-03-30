@@ -22,7 +22,6 @@ class AppKernel extends Kernel
             new Vich\UploaderBundle\VichUploaderBundle(),
             new Ichinator\ContactBundle\IchinatorContactBundle(),
             new Ichinator\NewsBundle\IchinatorNewsBundle(),
-            new KMS\FroalaEditorBundle\KMSFroalaEditorBundle(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
 
         ];

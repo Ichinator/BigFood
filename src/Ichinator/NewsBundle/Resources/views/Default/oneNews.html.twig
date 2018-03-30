@@ -13,6 +13,11 @@
 
         {{ oneNews.content|raw }}
         Publié le {{ oneNews.date|date("m/d/Y", "Europe/Paris") }}
+        {% for message in app.flashes('notice') %}
+            <div class="flash-notice">
+                {{ message }}
+            </div>
+        {% endfor %}
         {% if app.user %}
             <div class="row">
                 <div class="col-sm-12">

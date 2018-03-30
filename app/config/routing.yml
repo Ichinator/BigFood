@@ -22,7 +22,4 @@ easy_admin_bundle:
     type:     annotation
     prefix:   /admin
 
-kms_froala_editor:
-    resource: "@KMSFroalaEditorBundle/Resources/config/routing.yml"
-    prefix:   /froalaeditor
 

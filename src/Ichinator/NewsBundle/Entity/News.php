@@ -66,6 +66,7 @@ class News
 
     /**
      * @ORM\OneToMany(targetEntity="Comments", mappedBy="news")
+     *
      */
 
     private $comments;

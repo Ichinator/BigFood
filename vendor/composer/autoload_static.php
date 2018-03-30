@@ -61,10 +61,6 @@ class ComposerStaticInitfbdfe5f358c22a63d896f981079717c4
         array (
             'Monolog\\' => 8,
         ),
-        'K' => 
-        array (
-            'KMS\\FroalaEditorBundle\\' => 23,
-        ),
         'J' => 
         array (
             'JavierEguiluz\\Bundle\\EasyAdminBundle\\' => 37,
@@ -207,10 +203,6 @@ class ComposerStaticInitfbdfe5f358c22a63d896f981079717c4
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
-        ),
-        'KMS\\FroalaEditorBundle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/kms/froala-editor-bundle',
         ),
         'JavierEguiluz\\Bundle\\EasyAdminBundle\\' => 
         array (

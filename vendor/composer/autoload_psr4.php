@@ -33,7 +33,6 @@ return array(
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Psr\\Cache\\' => array($vendorDir . '/psr/cache/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
-    'KMS\\FroalaEditorBundle\\' => array($vendorDir . '/kms/froala-editor-bundle'),
     'JavierEguiluz\\Bundle\\EasyAdminBundle\\' => array($vendorDir . '/javiereguiluz/easyadmin-bundle/legacy'),
     'Ivory\\JsonBuilder\\' => array($vendorDir . '/egeloen/json-builder/src'),
     'Ivory\\CKEditorBundle\\' => array($vendorDir . '/egeloen/ckeditor-bundle'),

@@ -1,6 +1,11 @@
 {% extends 'base.html.twig' %}
 {% block body %}
     {{ parent() }}
+    {% for message in app.flashes('notice') %}
+        <div class="flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}
     {{ form_start(form) }}
     {{ form_widget(form) }}
     {{ form_end(form) }}
