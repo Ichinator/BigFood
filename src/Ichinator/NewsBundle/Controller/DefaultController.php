@@ -19,7 +19,7 @@ class DefaultController extends Controller
         $form = $this->createForm(NewsType::class, $news);
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
             $title = $form["title"]->getData();
             $content = $form["content"]->getData();
 
@@ -31,17 +31,16 @@ class DefaultController extends Controller
             }else {*/
             addslashes($title);
             addslashes($content);
-                $em = $this->getDoctrine()->getManager();
-                $news->setTitle($title);
-                $news->setContent($content);
+            $em = $this->getDoctrine()->getManager();
+            $news->setTitle($title);
+            $news->setContent($content);
 
-                $em->persist($news);
-                $em->flush();
+            $em->persist($news);
+            $em->flush();
 
-                $this->addFlash('success', 'Votre article a bien été enregistré !');
-                return $this->redirectToRoute('homepage');
-            }
-
+            $this->addFlash('success', 'Votre article a bien été enregistré !');
+            return $this->redirectToRoute('homepage');
+        }
 
 
         //}
@@ -50,7 +49,8 @@ class DefaultController extends Controller
         return $this->render('IchinatorNewsBundle:Default:news.html.twig', array('form' => $formView));
     }
 
-    public function oneNewsAction($id, Request $request){
+    public function oneNewsAction($id, Request $request)
+    {
         /*$comment = new Comments();
         $form = $this->createForm(CommentsType::class, $comment);
         $form->handleRequest($request);
@@ -78,55 +78,55 @@ class DefaultController extends Controller
 
         $oneNews = $this->getDoctrine()->getManager()->getRepository(News::class)->find($id);
 
-        if($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
             $contenu = $form["content"]->getData();
             /*var_dump($contenu);
             $contenuVerifie = strpos($contenu, "</");
             var_dump($contenuVerifie);
             if ($contenuVerifie === false && isset($contenu)){*/
-                addslashes($contenu);
-                $forbiddenWords = new ForbiddenWords();
-                $forbiddenWords = $this->getDoctrine()->getRepository(ForbiddenWords::class)->findWords();
-                $messageOk = true;
+            addslashes($contenu);
+            $forbiddenWords = new ForbiddenWords();
+            $forbiddenWords = $this->getDoctrine()->getRepository(ForbiddenWords::class)->findWords();
+            $messageOk = true;
 
-                foreach ($forbiddenWords as $forbiddenWord){
-                    $tabImplode = implode("|",$forbiddenWord);
-                    /*var_dump($tabImplode);
-                    var_dump($forbiddenWord);*/
-                    $contenuVerifieBlacklist = strpos($contenu, $tabImplode);
+            foreach ($forbiddenWords as $forbiddenWord) {
+                $tabImplode = implode("|", $forbiddenWord);
+                /*var_dump($tabImplode);
+                var_dump($forbiddenWord);*/
+                $contenuVerifieBlacklist = strpos($contenu, $tabImplode);
 
-                    if ($contenuVerifieBlacklist !== false){
-                        $messageOk = false;
-                        $this->addFlash("notice", "Votre message n a pas été enregistré car il contient des mots interdits");
-                        break;
-                    }
-                }
-                if($messageOk === true){
-                    $comments->setContent($contenu);
-
-                    $news = new News();
-                    $news = $this->getDoctrine()->getRepository(News::class)->find($id);
-
-                    //$user = new User();
-                    $user = $this->getUser();
-                    //$user = $this->get('security.token_storage')->getToken()->getUser();
-                    // relates this product to the category
-                    $comments->setNews($news);
-                    $comments->setUser($user);
-
-                    $em = $this->getDoctrine()->getManager();
-                    $em->persist($user);
-                    $em->persist($news);
-                    $em->persist($comments);
-                    $em->flush();
+                if ($contenuVerifieBlacklist !== false) {
+                    $messageOk = false;
+                    $this->addFlash("notice", "Votre message n a pas été enregistré car il contient des mots interdits");
+                    break;
                 }
             }
-            /*else{
-                $this->addFlash("notice", "Votre message n a pas été enregistré car il est vide ou contient des caractères interdits");
+            if ($messageOk === true) {
+                $comments->setContent($contenu);
+
+                $news = new News();
+                $news = $this->getDoctrine()->getRepository(News::class)->find($id);
+
+                //$user = new User();
+                $user = $this->getUser();
+                //$user = $this->get('security.token_storage')->getToken()->getUser();
+                // relates this product to the category
+                $comments->setNews($news);
+                $comments->setUser($user);
+
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($user);
+                $em->persist($news);
+                $em->persist($comments);
+                $em->flush();
             }
-        }*/
+        }
+        /*else{
+            $this->addFlash("notice", "Votre message n a pas été enregistré car il est vide ou contient des caractères interdits");
+        }
+    }*/
 
         $comments = $this->getDoctrine()->getRepository(Comments::class)->findNewsComments($id);
-        return $this->render('IchinatorNewsBundle:Default:oneNews.html.twig', array('oneNews'=>$oneNews, 'form' => $formView, 'comments' => $comments));
+        return $this->render('IchinatorNewsBundle:Default:oneNews.html.twig', array('oneNews' => $oneNews, 'form' => $formView, 'comments' => $comments));
     }
 }

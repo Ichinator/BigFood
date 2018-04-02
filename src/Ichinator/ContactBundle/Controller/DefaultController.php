@@ -15,42 +15,45 @@ class DefaultController extends Controller
         $form = $this->createForm(contactMessageType::class, $contactMessage);
         $form->handleRequest($request);
         $formView = $form->createView();
-        if($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
             $name = $form["name"]->getData();
             $mailAdress = $form["mailAdress"]->getData();
             $telephoneNumber = $form["telephoneNumber"]->getData();
             $message = $form["message"]->getData();
 
-            $chaineConcat = $name.$mailAdress.$message.$telephoneNumber;
+            /*$chaineConcat = $name.$mailAdress.$message.$telephoneNumber;
             $chaineConcatVerifie = strpos($chaineConcat, "</");
 
             if ($chaineConcatVerifie !== false || empty($contenu)){
                 $this->addFlash("notice", "Votre message contient des caractères inappropriés ou est vide !");
-            }else {
+            }else {*/
+            addslashes($name);
+            addslashes($mailAdress);
+            addslashes($telephoneNumber);
+            addslashes($message);
+            $em = $this->getDoctrine()->getManager();
 
-                $em = $this->getDoctrine()->getManager();
+            $contactMessage = new contactMessage();
+            $contactMessage->setName($name);
+            $contactMessage->setMailAdress($mailAdress);
+            $contactMessage->setTelephoneNumber($telephoneNumber);
+            $contactMessage->setMessage($message);
 
-                $contactMessage = new contactMessage();
-                $contactMessage->setName($name);
-                $contactMessage->setMailAdress($mailAdress);
-                $contactMessage->setTelephoneNumber($telephoneNumber);
-                $contactMessage->setMessage($message);
+            $em->persist($contactMessage);
+            $em->flush();
 
-                $em->persist($contactMessage);
-                $em->flush();
-
-                $messageToUser = \Swift_Message::newInstance()
-                    ->setSubject("BigFood a reçu votre message")
-                    ->setFrom('lazonegeek1@gmail.com')
-                    ->setTo($mailAdress)
-                    ->setBody($this->renderView('default/messageToUser.html.twig', array('message' => $message, 'name' => $name)), 'text/html');
-                $this->get('mailer')->send($messageToUser);
+            $messageToUser = \Swift_Message::newInstance()
+                ->setSubject("BigFood a reçu votre message")
+                ->setFrom('lazonegeek1@gmail.com')
+                ->setTo($mailAdress)
+                ->setBody($this->renderView('default/messageToUser.html.twig', array('message' => $message, 'name' => $name)), 'text/html');
+            $this->get('mailer')->send($messageToUser);
 
 
-                $this->addFlash('success', 'Votre message a bien été enregistré, nous vous contacterons bientôt !');
-                return $this->redirectToRoute('homepage');
-            }
+            $this->addFlash('success', 'Votre message a bien été enregistré, nous vous contacterons bientôt !');
+            return $this->redirectToRoute('homepage');
         }
+        //}
         return $this->render('IchinatorContactBundle:Default:index.html.twig', array('form' => $formView));
 
     }
