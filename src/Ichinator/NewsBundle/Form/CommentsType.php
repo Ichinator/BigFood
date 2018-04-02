@@ -17,7 +17,7 @@ class CommentsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('content', TextareaType::class)
+            ->add('content', CKEditorType::class)
             ->add('submit', SubmitType::class, array('label' => 'Envoyer commentaire'));
     }/**
      * {@inheritdoc}

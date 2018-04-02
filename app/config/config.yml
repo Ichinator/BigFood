@@ -146,6 +146,11 @@ easy_admin:
                                                 - { property: 'mailAdress', label: 'Adresses mails' }
                                                 - { property: 'telephoneNumber', label: 'Numéros de téléphone' }
                                                 - { property: 'message', type: 'textarea', label: 'Messages' }
+            FordbiddenWords:
+                            class: Ichinator\NewsBundle\Entity\ForbiddenWords
+                            label: 'Mots interdits'
+                            list:
+                                title: 'Mots interdits'
     site_name: 'Big Food'
     list:
             actions:

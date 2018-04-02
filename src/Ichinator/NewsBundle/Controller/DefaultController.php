@@ -3,6 +3,7 @@
 namespace Ichinator\NewsBundle\Controller;
 
 use AppBundle\Entity\User;
+use Ichinator\NewsBundle\Entity\ForbiddenWords;
 use Ichinator\NewsBundle\Entity\News;
 use Ichinator\NewsBundle\Form\NewsType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -22,16 +23,28 @@ class DefaultController extends Controller
             $title = $form["title"]->getData();
             $content = $form["content"]->getData();
 
-            $em = $this->getDoctrine()->getManager();
-            $news->setTitle($title);
-            $news->setContent($content);
+            /*$contenu = $title.$content;
+            $contenuVerifie = strpos($contenu, "</");
 
-            $em->persist($news);
-            $em->flush();
+            if ($contenuVerifie !== false || empty($contenu)){
+                $this->addFlash("notice", "Votre message contient des caractères inappropriés ou est vide !");
+            }else {*/
+            addslashes($title);
+            addslashes($content);
+                $em = $this->getDoctrine()->getManager();
+                $news->setTitle($title);
+                $news->setContent($content);
 
-            $this->addFlash('success', 'Votre article a bien été enregistré !');
-            return $this->redirectToRoute('homepage');
-        }
+                $em->persist($news);
+                $em->flush();
+
+                $this->addFlash('success', 'Votre article a bien été enregistré !');
+                return $this->redirectToRoute('homepage');
+            }
+
+
+
+        //}
         $formView = $form->createView();
 
         return $this->render('IchinatorNewsBundle:Default:news.html.twig', array('form' => $formView));
@@ -67,31 +80,51 @@ class DefaultController extends Controller
 
         if($form->isSubmitted() && $form->isValid()){
             $contenu = $form["content"]->getData();
+            /*var_dump($contenu);
             $contenuVerifie = strpos($contenu, "</");
-            if ($contenuVerifie !== false || empty($contenu)){
+            var_dump($contenuVerifie);
+            if ($contenuVerifie === false && isset($contenu)){*/
+                addslashes($contenu);
+                $forbiddenWords = new ForbiddenWords();
+                $forbiddenWords = $this->getDoctrine()->getRepository(ForbiddenWords::class)->findWords();
+                $messageOk = true;
+
+                foreach ($forbiddenWords as $forbiddenWord){
+                    $tabImplode = implode("|",$forbiddenWord);
+                    /*var_dump($tabImplode);
+                    var_dump($forbiddenWord);*/
+                    $contenuVerifieBlacklist = strpos($contenu, $tabImplode);
+
+                    if ($contenuVerifieBlacklist !== false){
+                        $messageOk = false;
+                        $this->addFlash("notice", "Votre message n a pas été enregistré car il contient des mots interdits");
+                        break;
+                    }
+                }
+                if($messageOk === true){
+                    $comments->setContent($contenu);
+
+                    $news = new News();
+                    $news = $this->getDoctrine()->getRepository(News::class)->find($id);
+
+                    //$user = new User();
+                    $user = $this->getUser();
+                    //$user = $this->get('security.token_storage')->getToken()->getUser();
+                    // relates this product to the category
+                    $comments->setNews($news);
+                    $comments->setUser($user);
+
+                    $em = $this->getDoctrine()->getManager();
+                    $em->persist($user);
+                    $em->persist($news);
+                    $em->persist($comments);
+                    $em->flush();
+                }
+            }
+            /*else{
                 $this->addFlash("notice", "Votre message n a pas été enregistré car il est vide ou contient des caractères interdits");
             }
-            else{
-                $comments->setContent($contenu);
-
-                $news = new News();
-                $news = $this->getDoctrine()->getRepository(News::class)->find($id);
-
-                //$user = new User();
-                $user = $this->getUser();
-                //$user = $this->get('security.token_storage')->getToken()->getUser();
-                // relates this product to the category
-                $comments->setNews($news);
-                $comments->setUser($user);
-
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($user);
-                $em->persist($news);
-                $em->persist($comments);
-                $em->flush();
-
-            }
-        }
+        }*/
 
         $comments = $this->getDoctrine()->getRepository(Comments::class)->findNewsComments($id);
         return $this->render('IchinatorNewsBundle:Default:oneNews.html.twig', array('oneNews'=>$oneNews, 'form' => $formView, 'comments' => $comments));
