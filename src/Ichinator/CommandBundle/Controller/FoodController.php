@@ -5,6 +5,7 @@ namespace Ichinator\CommandBundle\Controller;
 use Ichinator\CommandBundle\Entity\Burger;
 use Ichinator\CommandBundle\Entity\Plat;
 use Ichinator\CommandBundle\Entity\Dessert;
+use Ichinator\NewsBundle\Entity\ForbiddenWords;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Ichinator\NewsBundle\Form\CommentsType;
 use Ichinator\NewsBundle\Entity\Comments;
@@ -52,7 +53,7 @@ class FoodController extends Controller
 
         if($form->isSubmitted() && $form->isValid()){
             $contenu = $form["content"]->getData();
-            $contenuVerifie = strpos($contenu, "</");
+            /*$contenuVerifie = strpos($contenu, "</");
             if($contenuVerifie !== false || empty($contenu)){
                 $this->addFlash("notice", "Votre message n a pas été enregistré car il est vide ou contient des caractères interdits");
             }else{
@@ -73,6 +74,42 @@ class FoodController extends Controller
                     'notice',
                     'Commentaire enregistré !'
                 );
+            }*/
+            addslashes($contenu);
+            $forbiddenWords = new ForbiddenWords();
+            $forbiddenWords = $this->getDoctrine()->getRepository(ForbiddenWords::class)->findWords();
+            $messageOk = true;
+
+            foreach ($forbiddenWords as $forbiddenWord) {
+                $tabImplode = implode("|", $forbiddenWord);
+                /*var_dump($tabImplode);
+                var_dump($forbiddenWord);*/
+                $contenuVerifieBlacklist = strpos($contenu, $tabImplode);
+
+                if ($contenuVerifieBlacklist !== false) {
+                    $messageOk = false;
+                    $this->addFlash("notice", "Votre message n a pas été enregistré car il contient des mots interdits");
+                    break;
+                }
+            }
+            if ($messageOk === true) {
+                $comments->setContent($contenu);
+
+                $burger = new Burger();
+                $burger = $this->getDoctrine()->getRepository(Burger::class)->find($id);
+
+                //$user = new User();
+                $user = $this->getUser();
+                //$user = $this->get('security.token_storage')->getToken()->getUser();
+                // relates this product to the category
+                $comments->setBurger($burger);
+                $comments->setUser($user);
+
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($user);
+                $em->persist($burger);
+                $em->persist($comments);
+                $em->flush();
             }
         }
 
@@ -92,7 +129,7 @@ class FoodController extends Controller
 
         if($form->isSubmitted() && $form->isValid()){
             $contenu = $form["content"]->getData();
-            $contenuVerifie = strpos($contenu, "</");
+            /*$contenuVerifie = strpos($contenu, "</");
             if($contenuVerifie !== false || empty($contenu)){
                 $this->addFlash("notice", "Votre message n a pas été enregistré car il est vide ou contient des caractères interdits");
             }else{
@@ -113,6 +150,42 @@ class FoodController extends Controller
                     'notice',
                     'Commentaire enregistré !'
                 );
+            }*/
+            addslashes($contenu);
+            $forbiddenWords = new ForbiddenWords();
+            $forbiddenWords = $this->getDoctrine()->getRepository(ForbiddenWords::class)->findWords();
+            $messageOk = true;
+
+            foreach ($forbiddenWords as $forbiddenWord) {
+                $tabImplode = implode("|", $forbiddenWord);
+                /*var_dump($tabImplode);
+                var_dump($forbiddenWord);*/
+                $contenuVerifieBlacklist = strpos($contenu, $tabImplode);
+
+                if ($contenuVerifieBlacklist !== false) {
+                    $messageOk = false;
+                    $this->addFlash("notice", "Votre message n a pas été enregistré car il contient des mots interdits");
+                    break;
+                }
+            }
+            if ($messageOk === true) {
+                $comments->setContent($contenu);
+
+                $plat = new Plat();
+                $plat = $this->getDoctrine()->getRepository(Plat::class)->find($id);
+
+                //$user = new User();
+                $user = $this->getUser();
+                //$user = $this->get('security.token_storage')->getToken()->getUser();
+                // relates this product to the category
+                $comments->setPlat($plat);
+                $comments->setUser($user);
+
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($user);
+                $em->persist($plat);
+                $em->persist($comments);
+                $em->flush();
             }
         }
 
@@ -131,7 +204,7 @@ class FoodController extends Controller
 
         if($form->isSubmitted() && $form->isValid()){
             $contenu = $form["content"]->getData();
-            $contenuVerifie = strpos($contenu, "</");
+            /*$contenuVerifie = strpos($contenu, "</");
             if($contenuVerifie !== false || empty($contenu)){
                 $this->addFlash("notice", "Votre message n a pas été enregistré car il est vide ou contient des caractères interdits");
             }else{
@@ -152,6 +225,42 @@ class FoodController extends Controller
                     'notice',
                     'Commentaire enregistré !'
                 );
+            }*/
+            addslashes($contenu);
+            $forbiddenWords = new ForbiddenWords();
+            $forbiddenWords = $this->getDoctrine()->getRepository(ForbiddenWords::class)->findWords();
+            $messageOk = true;
+
+            foreach ($forbiddenWords as $forbiddenWord) {
+                $tabImplode = implode("|", $forbiddenWord);
+                /*var_dump($tabImplode);
+                var_dump($forbiddenWord);*/
+                $contenuVerifieBlacklist = strpos($contenu, $tabImplode);
+
+                if ($contenuVerifieBlacklist !== false) {
+                    $messageOk = false;
+                    $this->addFlash("notice", "Votre message n a pas été enregistré car il contient des mots interdits");
+                    break;
+                }
+            }
+            if ($messageOk === true) {
+                $comments->setContent($contenu);
+
+                $dessert = new Dessert();
+                $dessert = $this->getDoctrine()->getRepository(Dessert::class)->find($id);
+
+                //$user = new User();
+                $user = $this->getUser();
+                //$user = $this->get('security.token_storage')->getToken()->getUser();
+                // relates this product to the category
+                $comments->setDessert($dessert);
+                $comments->setUser($user);
+
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($user);
+                $em->persist($dessert);
+                $em->persist($comments);
+                $em->flush();
             }
         }
 

@@ -32,12 +32,13 @@
         {% endif %}
 
         {% for comments in comments %}
-            <div>
+            <div class="alert alert-success">
                 <p>
                     {{ comments.user }} a dit:
                 </p>
                 {{ comments.content|raw }}
             </div>
         {% endfor %}
+
     </div>
 {% endblock %}
